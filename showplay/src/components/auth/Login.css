@@ -1,0 +1,26 @@
+.dialog {
+  min-width: 15rem;
+  min-height: 5rem;
+}
+h2.logIn {
+  color:#4a6163;
+  font-family: 'Libre Baskerville', serif;
+}
+h1.logIn {
+  color:#4a6163;
+  font-family: 'Libre Baskerville', serif;
+}
+label.emailLabel {
+  color:#4a6163;
+  font-family: 'Libre Baskerville', serif;
+}
+a.register-link{
+  color: #f17a7e;
+  text-decoration: none;
+  background-color: transparent;
+}
+button.signIn{
+  background-color: #4a6163;
+  color: #fff;
+  border-radius: .25rem;
+}
