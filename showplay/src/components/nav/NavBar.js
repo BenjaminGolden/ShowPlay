@@ -20,7 +20,7 @@ export const NavBar = (props, user) => {
                    {user.name}
                 </li>
                 <li className="nav-item">
-                    <Link className="nav-link" to='/new'>New Event</Link>
+                    <Link className="nav-link" to='/create'>New Event</Link>
                 </li>
            </ul>
     </nav>
