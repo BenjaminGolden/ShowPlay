@@ -1,7 +1,7 @@
 import React from 'react'
 import {Route, Redirect} from 'react-router-dom'
 import {ApplicationViews} from './components/ApplicationViews'
-// import {NavBar} from './components/nav/Nav'
+import {NavBar} from './components/nav/NavBar'
 import {Login} from './components/auth/Login'
 import {Register} from './components/auth/Register'
 import {userStorageKey} from './components/auth/authSettings'
@@ -14,7 +14,7 @@ export const ShowPlay = () => (
             if (sessionStorage.getItem(userStorageKey)) {
                 return (
                     <>
-                    {/* <NavBar /> */}
+                    <NavBar />
                     <ApplicationViews />
                     </>
                 )
