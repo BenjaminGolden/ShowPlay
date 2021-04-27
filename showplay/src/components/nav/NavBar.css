@@ -25,3 +25,13 @@ a.nav-link{
 ul {
     list-style-type: none;
 }
+
+.nav__upper {
+    display: flex;
+    justify-content: space-around;
+    align-content: flex-end;
+}
+
+.logout {
+    text-align: right;
+}

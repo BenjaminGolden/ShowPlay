@@ -10,5 +10,24 @@
       "name": "Martyna Golden",
       "id": 2
     }
-  ]
+  ],
+  "events": [
+      {
+          "id": 1,
+          "userId": 1,
+          "state": "Tennessee",
+          "city": "Nashville",
+          "categoryId": 2,
+          "name": "Carter Vintage Guitars",
+          "description": "kick ass guitar store",
+          "URL": "www.cartervintage.com",
+          "rating": "5",
+          "date": "04/27/2021"
+
+      }
+
+  ],
+  "category":[],
+
+  "state":[]
 }
