@@ -3,6 +3,7 @@ import {Route} from 'react-router-dom'
 import {MainList} from './showplay/ShowPlayList'
 import {NewEvent} from './showplay/ShowPlayAdd'
 import {EventDetail} from './showplay/ShowPlayDetails'
+import { EventEditForm } from './showplay/ShowPlayEditForm'
 
 export const ApplicationViews = () => {
     return (
@@ -17,6 +18,10 @@ export const ApplicationViews = () => {
 
         <Route exact path="/details/:activityId(\d+)">
             <EventDetail />
+        </Route>
+
+        <Route exact path="/events/:activityId(\d+)/edit">
+            <EventEditForm />
         </Route>
 
         

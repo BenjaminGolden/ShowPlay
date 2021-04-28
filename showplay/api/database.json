@@ -14,10 +14,13 @@
   "events": [
     {
       "userId": 1,
+      "name": "Helicopter out to a glacier",
       "stateId": 2,
       "city": "Fairbanks",
-      "categoryId": 2,
-      "name": "heli to glacier",
+      "categoryId": {
+        "id": 2,
+        "name": "Recreation"
+      },
       "description": "took a helicopter to a glacier",
       "date": "2021-04-22",
       "url": "test",
@@ -26,13 +29,16 @@
     },
     {
       "userId": 1,
+      "name": "Skiing at Keystone",
       "stateId": 6,
-      "city": "Breckenridge",
-      "categoryId": 2,
-      "name": "Skiing at Breckenridge",
+      "city": "Keystone",
+      "categoryId": {
+        "id": 2,
+        "name": "Recreation"
+      },
       "description": "Rode peaks 6-10 and rode 40,000 vertical feet ",
       "date": "2021-04-15",
-      "url": "www.breckenridge.com",
+      "url": "www.keystone.com",
       "rating": "4 stars",
       "id": 2
     },
