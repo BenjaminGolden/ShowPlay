@@ -3,6 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { addEvent } from '../modules/EventManager';
 import { getAllStates } from '../modules/LocationManager'
 import { getAllCategories } from '../modules/CategoryManager'
+import { getAllEvents} from '../modules/EventManager'
 
 import './ShowPlayAdd.css'
 
@@ -49,6 +50,13 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
         })
     }
 
+    // const getEvents = () => {
+    //     return getAllEvents()
+    //     .then(eventsFromAPI => {
+    //     setActivity(eventsFromAPI)
+    // })
+    // }
+
     useEffect(() => {
         getCategories();
         getStates();
@@ -66,22 +74,31 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
 
         if (stateId === 0 || categoryId === 0 || city === "") {
             window.alert("please select a state, city, and a category")
-        } 
-        console.log(activity)
-        // if(event.target.id === 'add')
+        } if(evt.target.id === 'add'){        
             addEvent(activity)
-                .then(() => history.push('/'))
-        // } else {
-        //     addEvent(event)
-        //     .then(() => history.push('/'))
-        // }
+                .then(() => setActivity({
+                    userId: currentUser,
+                    stateId: 0,
+                    city: '',
+                    categoryId: 0,
+                    name: '',
+                    description: '',
+                    date: '',
+                    url: '',
+                    rating: ''
+                }))
+                
+        } else {
+            addEvent(activity)
+            .then(() => history.push('/'))
+        }
     }
 
     return (
         <form className="eventForm">
             <h2 className="event__title">New Event</h2>
             <div>
-            <select value={state.name} name="stateId" id="stateId" onChange={handleInputChange} className='form-control'>
+            <select value={activity.stateId} name="stateId" id="stateId" onChange={handleInputChange} className='form-control'>
                 <option value="0">Select a State</option>
                 {state.map(s => (
                     <option key={s.id} value={s.id}>{s.name}</option>
@@ -89,10 +106,10 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             </select>
             </div>
             <div className="event__cards">  
-            <input type='text' className="search" required onChange={handleInputChange} id="city" placeholder="City name"/>
+            <input value={activity.city} type='text' className="search" required onChange={handleInputChange} id="city" placeholder="City name"/>
             </div>
             <div>
-            <select value={category.name} name="categoryId" id="categoryId" onChange={handleInputChange} className='form-control'>
+            <select value={activity.categoryId} name="categoryId" id="categoryId" onChange={handleInputChange} className='form-control'>
                 <option vlaue="0">Select a Category</option>
                 {category.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
@@ -120,7 +137,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="URL"></label>
-                    <input type="text" id="url" onChange={handleInputChange} required autoFocus className="form__control" placeholder="URL" value={activity.URL}/>
+                    <input type="text" id="url" onChange={handleInputChange} required autoFocus className="form__control" placeholder="URL" value={activity.url}/>
                 </div>
             </fieldset>
             <fieldset>
@@ -130,7 +147,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
                 </div>
             </fieldset>
             <button className="button__save" id="return"onClick={handleSaveActivity}>Save and return</button>
-            {/* <button className="button__save" id="add"onClick={handleSaveActivity}>Save and add another</button> */}
+            <button className="button__save" id="add"onClick={handleSaveActivity}>Save and add another</button>
 
         </form>
     )
