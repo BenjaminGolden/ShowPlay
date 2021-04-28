@@ -17,8 +17,8 @@ export const MainCard = ({event}) => {
                 {/* <StarRating count={5} size={40} value={rating} activeColor={`#23383f`} inactiveColor={`#ddd`} onChange={handleChange}/> */}
                 <div className="currentUser__card--rating">{event.rating}</div>
                 <div className="currentUser__card--details">
-                    <Link  className="details-link" to={`/details`}>
-                    <button type="button" onClick={() => history.pushState(`/details`)}>details</button> 
+                    <Link  className="details-link" to={`/details/${event.id}`}>
+                    <button type="button" onClick={() => history.push(`/details/${event.id}`)}>details</button> 
                     </Link>
                 </div>
             </section>
