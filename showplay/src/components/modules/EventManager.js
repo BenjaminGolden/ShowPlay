@@ -1,7 +1,7 @@
 const remoteURL = "http://localhost:8088"
 
 export const getAllEvents = () => {
-    return fetch(`${remoteURL}/events?_expand=category`)
+    return fetch(`${remoteURL}/events?_expand=category&_expand=state`)
     .then(result => result.json())
 }
 

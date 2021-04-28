@@ -7,20 +7,32 @@ import { getAllCategories } from '../modules/CategoryManager'
 import './ShowPlayAdd.css'
 
 export const NewEvent = () => {
-    const [event, setEvent] = useState({})
+const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
+
+    const [activity, setActivity] = useState({
+        userId: currentUser,
+        stateId: 0,
+        city: '',
+        categoryId: 0,
+        name: '',
+        description: '',
+        date: '',
+        url: '',
+        rating: ''
+    })
     const [isLoading, setIsLoading] = useState(false);
     const [category, setCategory] = useState([])
     const [state, setState] = useState([])
     const [city, setCity] = useState([])
 
     const handleInputChange = (event) => {
-        const newEvent = { ...event }
+        const newActivity = { ...activity }
         let selectedVal = event.target.value
         if (event.target.id.includes('Id')) {
             selectedVal = parseInt(selectedVal)
         }
-        newEvent[event.target.id] = selectedVal
-        setEvent(newEvent)
+        newActivity[event.target.id] = selectedVal
+        setActivity(newActivity)
     }
 
     const getCategories = () => {
@@ -44,19 +56,20 @@ export const NewEvent = () => {
 
     const history = useHistory();
 
-    const handleSaveEvent = (event) => {
-        event.preventDefault()
+    const handleSaveActivity = (evt) => {
+        evt.preventDefault()
         setIsLoading(true)
 
-        const stateId = event.stateId
-        const categoryId = event.categoryId
-        const city = event.city
+        const stateId = evt.stateId
+        const categoryId = evt.categoryId
+        const city = evt.city
 
-        if (stateId === 0 || categoryId === 0 || city === 0) {
+        if (stateId === 0 || categoryId === 0 || city === "") {
             window.alert("please select a state, city, and a category")
         } 
+        console.log(activity)
         // if(event.target.id === 'add')
-            addEvent(event)
+            addEvent(activity)
                 .then(() => history.push('/'))
         // } else {
         //     addEvent(event)
@@ -68,18 +81,18 @@ export const NewEvent = () => {
         <form className="eventForm">
             <h2 className="event__title">New Event</h2>
             <div>
-            <select value={state.name} name="category" id="category" onChange={handleInputChange} className='form-control'>
-                <option vlaue="0">Select a State</option>
+            <select value={state.name} name="stateId" id="stateId" onChange={handleInputChange} className='form-control'>
+                <option value="0">Select a State</option>
                 {state.map(s => (
                     <option key={s.id} value={s.id}>{s.name}</option>
                 ))}
             </select>
             </div>
             <div className="event__cards">  
-            <input type='text' className="search" required onChange={handleInputChange} id="city__search" placeholder="City name"/>
+            <input type='text' className="search" required onChange={handleInputChange} id="city" placeholder="City name"/>
             </div>
             <div>
-            <select value={category.name} name="category" id="categoory" onChange={handleInputChange} className='form-control'>
+            <select value={category.name} name="categoryId" id="categoryId" onChange={handleInputChange} className='form-control'>
                 <option vlaue="0">Select a Category</option>
                 {category.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
@@ -89,35 +102,35 @@ export const NewEvent = () => {
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="name"></label>
-                    <input type="text" id="name" onChange={handleInputChange} required autoFocus className="form__control" placeholder="name of event" value={event.name}/>
+                    <input type="text" id="name" onChange={handleInputChange} required autoFocus className="form__control" placeholder="name of event" value={activity.name}/>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="description"></label>
-                    <textarea type="text" id="description" onChange={handleInputChange} required autoFocus className="form__control" placeholder="description" value={event.description} rows="4" cols="75"></textarea>
+                    <textarea type="text" id="description" onChange={handleInputChange} required autoFocus className="form__control" placeholder="description" value={activity.description} rows="4" cols="75"></textarea>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="date"></label>
-                    <input type="date" id="date" onChange={handleInputChange} required autoFocus className="form__control" placeholder="date" value={event.date}/>
+                    <input type="date" id="date" onChange={handleInputChange} required autoFocus className="form__control" placeholder="date" value={activity.date}/>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="URL"></label>
-                    <input type="text" id="url" onChange={handleInputChange} required autoFocus className="form__control" placeholder="URL" value={event.URL}/>
+                    <input type="text" id="url" onChange={handleInputChange} required autoFocus className="form__control" placeholder="URL" value={activity.URL}/>
                 </div>
             </fieldset>
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="Rating"></label>
-                    <input type="text" id="rating" onChange={handleInputChange} required autoFocus className="form__control" placeholder="rating" value={event.rating}/>
+                    <input type="text" id="rating" onChange={handleInputChange} required autoFocus className="form__control" placeholder="rating" value={activity.rating}/>
                 </div>
             </fieldset>
-            <button className="button__save" id="return"onClick={handleSaveEvent}>Save and return</button>
-            <button className="button__save" id="add"onClick={handleSaveEvent}>Save and add another</button>
+            <button className="button__save" id="return"onClick={handleSaveActivity}>Save and return</button>
+            {/* <button className="button__save" id="add"onClick={handleSaveActivity}>Save and add another</button> */}
 
         </form>
     )

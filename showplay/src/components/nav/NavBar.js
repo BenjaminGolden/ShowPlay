@@ -1,6 +1,6 @@
 import React from 'react'
 import {Link} from 'react-router-dom'
-import { userStorageKey } from '../auth/authSettings'
+// import { userStorageKey } from '../auth/authSettings'
 import './NavBar.css'
 
 export const NavBar = (props, user) => {
