@@ -59,18 +59,6 @@
       "url": "www.chicagomusicexchange.com",
       "rating": "3 stars",
       "id": 4
-    },
-    {
-      "userId": 1,
-      "stateId": 3,
-      "city": "Phoenix",
-      "categoryId": 1,
-      "name": "Tex Mex",
-      "description": "killer food",
-      "date": "2021-04-04",
-      "url": "test",
-      "rating": "2 stars",
-      "id": 5
     }
   ],
   "categories": [
