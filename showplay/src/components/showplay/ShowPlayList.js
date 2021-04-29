@@ -1,102 +1,90 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import { getAllEvents } from '../modules/EventManager';
+import { getAllEvents, getActivitiesByUserId } from '../modules/EventManager';
 import { getAllCategories } from '../modules/CategoryManager'
 import {MainCard} from './ShowPlayCard'
 import { getEventByCategory } from '../modules/CategoryManager'
 
 export const MainList = () => {
-    const [activity, setActivity] = useState([])
-    const [category, setCategory] = useState([])
-    const [isSelected, setIsSelected] = useState({})
+    const [activities, setActivities] = useState([])
+    const [categories, setCategories] = useState([])
+    const [filterId, setFilterId] = useState(0)
+    const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
 
-    const getEvents = () => {
-        return getAllEvents()
+    const getActivitiesForCurrentUser = () => {
+        return getActivitiesByUserId(currentUser)
         .then(eventsFromAPI => {
-            setActivity(eventsFromAPI)
+            setActivities(eventsFromAPI)
         })
     }
 
     const getCategories = () => {
         return getAllCategories()
         .then(categoriesFromAPI => {
-            setCategory(categoriesFromAPI)
+            setCategories(categoriesFromAPI)
         })
     }    
 
     const history = useHistory();
 
-    // const handleControlledInputChange = (category) => {
-    //     const newCategory = { ...category }
-    //     let selectedVal = event.target.value
-    //     if (event.target.id.includes('id')) {
-    //         selectedVal = parseInt(selectedVal)
-    //     }
-    //     newCategory[event.target.id] = selectedVal
-    //     setCategory(newCategory)
-        
-    // }
+    //when a category is selected from the dropdown, we need to get that id and filter the events based on the category id. 
+    //the category id lives on the event object
+    //after events have been filtered by category id, the filtered events should display on the main list.
+    //keep track of the 
+    const handleActivityFilter = (evt) => {
+        const categoryId = parseInt(evt.target.value)
+        setFilterId(categoryId)
 
-    const handleFieldChange = (event) => {
-        const stateToChange = { ...event }
-        stateToChange = event.target.value
-        setActivity(stateToChange);
     }
 
+    const handleFieldChange = (evt) => {
+        const stateToChange = { ...activities }
+        stateToChange = evt.target.value
+        setActivities(stateToChange)
+    
+    }
+
+    // sort data
     // const getAllEventEntries = () => {
-    //     getAllEvents()
+    //     getEvents()
     //     .then(data => {
     //         data.sort()
     //     })
     // }
 
-    const getEventsByCategory = (id) => {
-        return getEventByCategory(id)
-        .then(eventsFromAPI => {
-            console.log(eventsFromAPI)
-            setIsSelected(eventsFromAPI)
-        })
-    }
+
     
 
-    useEffect(() => {
-        const isSelected = {};
 
-        const categoryNames = category.map(c => c.name)
-        categoryNames.forEach(categoryName => isSelected[categoryName] = false)
-
-        setIsSelected(isSelected);
-    }, [])
 
     useEffect(() => {
-        getEvents();
+        getActivitiesForCurrentUser();
         getCategories();
-        getEventByCategory();
+       
         
     }, []);
 
-    //Still working on filtering events by category. 
+
+
     return(
         <>
         <div className="event__cards">  
             <input type='text' className="search" required onChange={handleFieldChange} id="search_box" placeholder="Search"/>
         </div>
         <div>
-            <select value={category.name} name="category" className='form-control' id="category" onChange={getEventByCategory}>
-                <option vlaue="0">Filter by Category</option> 
-                {category.map(c => (
+            <select value={categories.name} name="category" className='form-control' id="category" onChange={handleActivityFilter}>
+                <option value="0">Filter by Category</option> 
+                {categories.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                 ))}</select>
 
-            {/* <select value={category.name} name="category" className='form-control' id="category" onChange={() => setIsSelected({ ...isSelected, [category.name] : !isSelected[category.name]})}>
-                <option vlaue="0">Filter by Category</option>
-                {category.filter(c => isSelected[category.name])}{category.map(c => (
-                    <option key={c.id} value={c.id}>{c.name}</option>
-                ))}
-            </select> */}
         </div>
         <div className="section__content">
-            {activity.map(activity => <MainCard key={activity.id} activity={activity} />)}
+            { filterId === 0
+            ? activities.map(activity => <MainCard key={activity.id} activity={activity} />)
+            : activities.filter(activity => activity.categoryId === filterId).map(activity => <MainCard key={activity.id} activity={activity} />)
+            }
+
         </div>
         </>
     )

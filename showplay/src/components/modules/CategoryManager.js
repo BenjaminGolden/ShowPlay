@@ -6,6 +6,6 @@ export const getAllCategories = () => {
 }
 
 export const getEventByCategory = (id) => {
-    return fetch(`${remoteURL}/events?_expand=category`)
+    return fetch(`${remoteURL}/category/${id}?_embed=events`)
     .then(result => result.json())
 }

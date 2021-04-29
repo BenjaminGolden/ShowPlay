@@ -5,6 +5,11 @@ export const getAllEvents = () => {
     .then(result => result.json())
 }
 
+export const getActivitiesByUserId = (userId) => {
+    return fetch(`${remoteURL}/events?userId=${userId}&_expand=category&_expand=state`)
+    .then(result => result.json())
+}
+
 export const getEventById = (id) => {
     return fetch(`${remoteURL}/events/${id}?_expand=category&_expand=state`)
     .then(result => result.json())
