@@ -1,53 +1,72 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import { getAllEvents } from '../modules/EventManager';
+import { getActivitiesByUserId } from '../modules/EventManager';
 import { getAllCategories } from '../modules/CategoryManager'
 import {MainCard} from './ShowPlayCard'
 
-export const MainList = () => {
-    const [events, setEvents] = useState([])
-    const [event, setEvent] = useState([])
-    const [category, setCategory] = useState([])
-   
 
-    const getEvents = () => {
-        return getAllEvents()
+export const MainList = () => {
+    const [activities, setActivities] = useState([])
+    const [categories, setCategories] = useState([])
+    const [filterId, setFilterId] = useState(0)
+    const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
+
+    const getActivitiesForCurrentUser = () => {
+        return getActivitiesByUserId(currentUser)
         .then(eventsFromAPI => {
-            setEvents(eventsFromAPI)
+            setActivities(eventsFromAPI)
         })
     }
 
     const getCategories = () => {
         return getAllCategories()
         .then(categoriesFromAPI => {
-            setCategory(categoriesFromAPI)
+            setCategories(categoriesFromAPI)
         })
     }    
 
     const history = useHistory();
 
-    const handleControlledInputChange = (category) => {
-        const newCategory = { ...category }
-        let selectedVal = event.target.value
-        if (event.target.id.includes('id')) {
-            selectedVal = parseInt(selectedVal)
-        }
-        newCategory[event.target.id] = selectedVal
-        setCategory(newCategory)
+    //when a category is selected from the dropdown, we need to get that id and filter the events based on the category id. 
+    //the category id lives on the event object
+    //after events have been filtered by category id, the filtered events should display on the main list.
+    //keep track of the 
+    const handleActivityFilter = (evt) => {
+        const categoryId = parseInt(evt.target.value)
+        setFilterId(categoryId)
+
     }
 
-    const handleFieldChange = (event) => {
-        const stateToChange = { ...event }
-        stateToChange = event.target.value
-        setEvent(stateToChange);
+    const handleFieldChange = (evt) => {
+        const stateToChange = { ...activities }
+        stateToChange = evt.target.value
+        setActivities(stateToChange)
+    
     }
+
+    // sort data
+
+    const [data, setData] = useState([])
+    const [sortType, setSortType] = useState('city')
+
+    useEffect(() => {
+        const sortArray = city => {
+            const 
+        }
+    })
+
+    
+
 
 
     useEffect(() => {
-        getEvents();
+        getActivitiesForCurrentUser();
         getCategories();
+       
         
     }, []);
+
+
 
     return(
         <>
@@ -55,15 +74,19 @@ export const MainList = () => {
             <input type='text' className="search" required onChange={handleFieldChange} id="search_box" placeholder="Search"/>
         </div>
         <div>
-            <select value={category.name} name="category" id="category" onChange={handleControlledInputChange} className='form-control'>
-                <option vlaue="0">Filter by Category</option>
-                {category.map(c => (
+            <select value={categories.name} name="category" className='form-control' id="category" onChange={handleActivityFilter}>
+                <option value="0">Filter by Category</option> 
+                {categories.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
-                ))}
-            </select>
+                ))}</select>
+
         </div>
         <div className="section__content">
-            {events.map(event => <MainCard key={event.id} event={event} />)}
+            { filterId === 0
+            ? activities.map(activity => <MainCard key={activity.id} activity={activity} />)
+            : activities.filter(activity => activity.categoryId === filterId).map(activity => <MainCard key={activity.id} activity={activity} />)
+            }
+
         </div>
         </>
     )

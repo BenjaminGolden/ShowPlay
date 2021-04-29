@@ -3,7 +3,7 @@ import {Link, useHistory} from 'react-router-dom'
 // import {useHistory} from 'react-router-dom';
 import './ShowPlayMain.css'
 
-export const MainCard = ({event}) => {
+export const MainCard = ({activity}) => {
 
     const history = useHistory();
     // const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
@@ -11,14 +11,14 @@ export const MainCard = ({event}) => {
         return(
             <section className="currentUser__card">
                 <div>
-                <h3 className="currentUser__card--location">{event.city}, {event.state.name}</h3>
+                <h3 className="currentUser__card--location">{activity.city}, {activity.state.name}</h3>
                 </div>
-                <h2 className="currentUser__card--title">{event.name}</h2>
+                <h2 className="currentUser__card--title">{activity.name}</h2>
                 {/* <StarRating count={5} size={40} value={rating} activeColor={`#23383f`} inactiveColor={`#ddd`} onChange={handleChange}/> */}
-                <div className="currentUser__card--rating">{event.rating}</div>
+                <div className="currentUser__card--rating">{activity.rating}</div>
                 <div className="currentUser__card--details">
-                    <Link  className="details-link" to={`/details/${event.id}`}>
-                    <button type="button" onClick={() => history.push(`/details/${event.id}`)}>details</button> 
+                    <Link  className="details-link" to={`/details/${activity.id}`}>
+                    <button type="button" onClick={() => history.push(`/details/${activity.id}`)}>details</button> 
                     </Link>
                 </div>
             </section>

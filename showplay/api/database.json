@@ -14,13 +14,10 @@
   "events": [
     {
       "userId": 1,
-      "name": "Helicopter out to a glacier",
       "stateId": 2,
       "city": "Fairbanks",
-      "categoryId": {
-        "id": 2,
-        "name": "Recreation"
-      },
+      "categoryId": 2,
+      "name": "heli to glacier",
       "description": "took a helicopter to a glacier",
       "date": "2021-04-22",
       "url": "test",
@@ -29,16 +26,13 @@
     },
     {
       "userId": 1,
-      "name": "Skiing at Keystone",
       "stateId": 6,
-      "city": "Keystone",
-      "categoryId": {
-        "id": 2,
-        "name": "Recreation"
-      },
+      "city": "Breckenridge",
+      "categoryId": 2,
+      "name": "Skiing at Breckenridge",
       "description": "Rode peaks 6-10 and rode 40,000 vertical feet ",
       "date": "2021-04-15",
-      "url": "www.keystone.com",
+      "url": "www.breckenridge.com",
       "rating": "4 stars",
       "id": 2
     },
@@ -65,6 +59,18 @@
       "url": "www.chicagomusicexchange.com",
       "rating": "3 stars",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "stateId": 5,
+      "city": "San Diego",
+      "categoryId": 1,
+      "name": "tacos",
+      "description": "taco flavor kisses",
+      "date": "2021-04-22",
+      "url": "www.taco.com",
+      "rating": "5 stars",
+      "id": 5
     }
   ],
   "categories": [
