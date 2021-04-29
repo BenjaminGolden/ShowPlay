@@ -59,6 +59,18 @@
       "url": "www.chicagomusicexchange.com",
       "rating": "3 stars",
       "id": 4
+    },
+    {
+      "userId": 1,
+      "stateId": 5,
+      "city": "San Diego",
+      "categoryId": 1,
+      "name": "tacos",
+      "description": "taco flavor kisses",
+      "date": "2021-04-22",
+      "url": "www.taco.com",
+      "rating": "5 stars",
+      "id": 5
     }
   ],
   "categories": [

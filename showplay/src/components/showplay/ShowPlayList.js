@@ -1,9 +1,9 @@
 import React, {useState, useEffect} from 'react';
 import {useHistory} from 'react-router-dom';
-import { getAllEvents, getActivitiesByUserId } from '../modules/EventManager';
+import { getActivitiesByUserId } from '../modules/EventManager';
 import { getAllCategories } from '../modules/CategoryManager'
 import {MainCard} from './ShowPlayCard'
-import { getEventByCategory } from '../modules/CategoryManager'
+
 
 export const MainList = () => {
     const [activities, setActivities] = useState([])
@@ -45,13 +45,15 @@ export const MainList = () => {
     }
 
     // sort data
-    // const getAllEventEntries = () => {
-    //     getEvents()
-    //     .then(data => {
-    //         data.sort()
-    //     })
-    // }
 
+    const [data, setData] = useState([])
+    const [sortType, setSortType] = useState('city')
+
+    useEffect(() => {
+        const sortArray = city => {
+            const 
+        }
+    })
 
     
 
