@@ -5,6 +5,7 @@ import { getAllCategories } from '../modules/CategoryManager'
 import {MainCard} from './ShowPlayCard'
 
 
+
 export const MainList = () => {
     const [activities, setActivities] = useState([])
     const [categories, setCategories] = useState([])

@@ -14,14 +14,17 @@
   "events": [
     {
       "userId": 1,
+      "name": "Helicopter out to a glacier",
       "stateId": 2,
       "city": "Fairbanks",
-      "categoryId": 2,
-      "name": "heli to glacier",
+      "categoryId": {
+        "id": 2,
+        "name": "Recreation"
+      },
       "description": "took a helicopter to a glacier",
-      "date": "2021-04-22",
+      "date": "2021-04-01",
       "url": "test",
-      "rating": "5 stars",
+      "rating": "3 cats",
       "id": 1
     },
     {
@@ -71,6 +74,18 @@
       "url": "www.taco.com",
       "rating": "5 stars",
       "id": 5
+    },
+    {
+      "userId": 1,
+      "stateId": 43,
+      "city": "Fort Worth",
+      "categoryId": 1,
+      "name": "Billy Bob's",
+      "description": "music venue",
+      "date": "2021-04-30",
+      "url": "test",
+      "rating": "2",
+      "id": 6
     }
   ],
   "categories": [

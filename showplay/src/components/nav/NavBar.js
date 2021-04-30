@@ -19,7 +19,7 @@ export const NavBar = () => {
         getCurrentUser();
     }, [])
     
-    console.log(user[0]?.name)
+    console.log(user)
     //TODO: need to display user in the nav bar
     return (
     <nav className="navbar">
