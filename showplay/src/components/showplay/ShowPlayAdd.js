@@ -24,7 +24,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
     const [isLoading, setIsLoading] = useState(false);
     const [category, setCategory] = useState([])
     const [state, setState] = useState([])
-    const [city, setCity] = useState([])
+
 
     const handleInputChange = (event) => {
         const newActivity = { ...activity }
@@ -50,12 +50,23 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
         })
     }
 
-    // const getEvents = () => {
-    //     return getAllEvents()
+    const [rating, setRating] = useState(0)
+
+    // const getActivitiesForCurrentUser = () => {
+    //     return getActivitiesByUserId(currentUser)
     //     .then(eventsFromAPI => {
-    //     setActivity(eventsFromAPI)
-    // })
+    //         setActivity(eventsFromAPI)
+    //     })
     // }
+
+    const handleRatingFilter = (evt) => {
+        const rating = parseInt(evt.target.value)
+        setRating(rating)
+    }
+
+    // useEffect(() => {
+    //     getActivitiesForCurrentUser();        
+    // }, []);
 
     useEffect(() => {
         getCategories();
@@ -148,8 +159,6 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
                 <option value="3">3</option>
                 <option value="4">4</option>
                 <option value="5">5</option>
-    
-                
             </select>
             
 

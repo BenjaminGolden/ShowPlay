@@ -28,10 +28,7 @@ export const MainList = () => {
 
     const history = useHistory();
 
-    //when a category is selected from the dropdown, we need to get that id and filter the events based on the category id. 
-    //the category id lives on the event object
-    //after events have been filtered by category id, the filtered events should display on the main list.
-    //keep track of the 
+
     const handleActivityFilter = (evt) => {
         const categoryId = parseInt(evt.target.value)
         setFilterId(categoryId)
