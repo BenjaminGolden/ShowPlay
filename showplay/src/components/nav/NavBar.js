@@ -1,15 +1,24 @@
-import React, {useState} from 'react'
-import {Link} from 'react-router-dom'
+import React, {useEffect, useState} from 'react'
+import { Link } from 'react-router-dom'
 // import { userStorageKey } from '../auth/authSettings'
 import './NavBar.css'
+import { getLoggedInUser } from '../modules/UserManager'
 
-export const NavBar = (props, user) => {
+export const NavBar = () => {
     const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
-    // const [user, setUser] = useState({
-    //     user: currentUser
-    // })
+    const [user, setUser] = useState({})
 
-    //TODO: need to display user in the nav bar
+    const getCurrentUser = () => {
+        return getLoggedInUser(currentUser)
+        .then(userFromAPI => {
+            setUser(userFromAPI)
+        })
+    }
+
+    useEffect(() => {
+        getCurrentUser();
+    }, [])
+
     return (
     <nav className="navbar">
             <ul className="nav__upper">
@@ -23,7 +32,7 @@ export const NavBar = (props, user) => {
                     <Link className="nav-link" to='/'>My List</Link>
                 </li>
                 <li className="nav-item">
-                   {user.name}
+                   <em>Welcome, </em>{user[0]?.name}
                 </li>
                 <li className="nav-item">
                     <Link className="nav-link" to='/create'>New Event</Link>

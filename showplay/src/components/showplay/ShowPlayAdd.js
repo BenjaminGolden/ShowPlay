@@ -24,7 +24,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
     const [isLoading, setIsLoading] = useState(false);
     const [category, setCategory] = useState([])
     const [state, setState] = useState([])
-    const [city, setCity] = useState([])
+
 
     const handleInputChange = (event) => {
         const newActivity = { ...activity }
@@ -50,12 +50,23 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
         })
     }
 
-    // const getEvents = () => {
-    //     return getAllEvents()
+    const [rating, setRating] = useState(0)
+
+    // const getActivitiesForCurrentUser = () => {
+    //     return getActivitiesByUserId(currentUser)
     //     .then(eventsFromAPI => {
-    //     setActivity(eventsFromAPI)
-    // })
+    //         setActivity(eventsFromAPI)
+    //     })
     // }
+
+    const handleRatingFilter = (evt) => {
+        const rating = parseInt(evt.target.value)
+        setRating(rating)
+    }
+
+    // useEffect(() => {
+    //     getActivitiesForCurrentUser();        
+    // }, []);
 
     useEffect(() => {
         getCategories();
@@ -110,7 +121,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             </div>
             <div>
             <select value={activity.categoryId} name="categoryId" id="categoryId" onChange={handleInputChange} className='form-control'>
-                <option vlaue="0">Select a Category</option>
+                <option value="0">Select a Category</option>
                 {category.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                 ))}
@@ -140,12 +151,17 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
                     <input type="text" id="url" onChange={handleInputChange} required autoFocus className="form__control" placeholder="URL" value={activity.url}/>
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form__group">
-                    <label htmlFor="Rating"></label>
-                    <input type="text" id="rating" onChange={handleInputChange} required autoFocus className="form__control" placeholder="rating" value={activity.rating}/>
-                </div>
-            </fieldset>
+            <select value={activity.rating} name="rating" id="rating" onChange={handleInputChange} className='form-control'>
+                <option value="">Select a Rating</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
+            
+
             <button className="button__save" id="return"onClick={handleSaveActivity}>Save and return</button>
             <button className="button__save" id="add"onClick={handleSaveActivity}>Save and add another</button>
 

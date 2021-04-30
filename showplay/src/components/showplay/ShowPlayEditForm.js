@@ -17,7 +17,7 @@ export const EventEditForm = () => {
             description: '',
             date: '',
             url: '',
-            rating: ''
+            rating: 0
     })
 
     const [isLoading, setIsLoading] = useState(false);
@@ -76,7 +76,7 @@ export const EventEditForm = () => {
             name: activity.name,
             stateId: activity.stateId,
             city: activity.city,
-            categoryId: activity.category,
+            categoryId: activity.categoryId,
             description: activity.description,
             date: activity.date,
             url: activity.url,
@@ -144,12 +144,15 @@ export const EventEditForm = () => {
                     <input type="text" id="url" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="URL" value={activity.url}/>
                 </div>
             </fieldset>
-            <fieldset>
-                <div className="form__group">
-                    <label htmlFor="Rating"></label>
-                    <input type="text" id="rating" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="rating" value={activity.rating}/>
-                </div>
-            </fieldset>
+            <select value={activity.rating} name="rating" id="rating" onChange={handleInputChange} className='form-control'>
+                <option value="">Select a Rating</option>
+                <option value="0">0</option>
+                <option value="1">1</option>
+                <option value="2">2</option>
+                <option value="3">3</option>
+                <option value="4">4</option>
+                <option value="5">5</option>
+            </select>
             <button
               type="button" disabled={isLoading}
               onClick={updateExistingEvent}
