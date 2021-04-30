@@ -46,14 +46,14 @@ export const MainList = () => {
 
     // sort data
 
-    const [data, setData] = useState([])
-    const [sortType, setSortType] = useState('city')
+    // const [data, setData] = useState([])
+    // const [sortType, setSortType] = useState('city')
 
-    useEffect(() => {
-        const sortArray = city => {
-            const 
-        }
-    })
+    // useEffect(() => {
+    //     const sortArray = city => {
+    //         const 
+    //     }
+    // })
 
     
 
