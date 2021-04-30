@@ -1,33 +1,11 @@
-import React, {useState} from 'react';
+import React  from 'react';
 import {Link, useHistory} from 'react-router-dom'
-import { getActivitiesByUserId } from '../modules/EventManager'
-// import {useHistory} from 'react-router-dom';
 import './ShowPlayMain.css'
-import StarRateIcon from '@material-ui/icons/StarRate';
+
 
 
 export const MainCard = ({activity}) => {
-    // const [activities, setActivities] = useState([])
-    // const [rating, setRating] = useState(0)
-
-    // const getActivitiesForCurrentUser = () => {
-    //     return getActivitiesByUserId(currentUser)
-    //     .then(eventsFromAPI => {
-    //         setActivities(eventsFromAPI)
-    //     })
-    // }
-
-    // const handleRatingFilter = (evt) => {
-    //     const rating = parseInt(evt.target.value)
-    //     setRating(rating)
-    // }
-
-    // useEffect(() => {
-    //     getActivitiesForCurrentUser();        
-    // }, []);
-
-    //i need to access the event object and see the number associated with the rating property
-    //then I need to display stars for the number associated with the rating property
+  
 
     const history = useHistory();
 

@@ -21,7 +21,6 @@ export const EventEditForm = () => {
     })
 
     const [isLoading, setIsLoading] = useState(false);
-    const [locations, setLocations] = useState([])
     const [category, setCategory] = useState([])   
     const [state, setState] = useState([])
      
@@ -40,7 +39,7 @@ export const EventEditForm = () => {
         if (evt.target.id.includes("Id")) {
             selectedVal = parseInt(selectedVal)
         }
-        newActivity[evt.target.id] = selectedVal
+        newActivity[evt.target.id] = parseInt(selectedVal)
         setActivity(newActivity)
     }
 
@@ -95,7 +94,7 @@ export const EventEditForm = () => {
             setActivity(activity);
             setIsLoading(false);
         })
-    }, [])
+    }, [activityId])
 
     return (
         <>
@@ -146,12 +145,12 @@ export const EventEditForm = () => {
             </fieldset>
             <select value={activity.rating} name="rating" id="rating" onChange={handleInputChange} className='form-control'>
                 <option value="">Select a Rating</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option value={0}>0</option>
+                <option value={1}>1</option>
+                <option value={2}>2</option>
+                <option value={3}>3</option>
+                <option value={4}>4</option>
+                <option value={5}>5</option>
             </select>
             <button
               type="button" disabled={isLoading}
