@@ -1,0 +1,15 @@
+.details__card {
+    display: flex;
+    flex-direction: column;
+    background-color: #cbcec5;
+    
+}
+
+.details__button {
+    display: flex;
+    
+}
+
+.details__name {
+    text-align: center;
+}

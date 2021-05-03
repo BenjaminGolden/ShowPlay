@@ -1,0 +1,29 @@
+.currentUser__card {
+    background-color: #c8bcab;
+    border-radius: 10px;
+    color: #23383f;
+}
+
+.currentUser__card--title{
+    display: flex;
+    flex-direction: column;
+    margin: 1rem;
+    
+}
+
+.currentUser__card--location {
+    text-align: center;
+}
+.currentUser__card--rating {
+    display: flex;
+
+    justify-content: flex-end;
+}
+.currentUser__card--details {
+    text-align: center;
+    
+}
+
+.details{
+    font-size: 1.25em;;
+}
