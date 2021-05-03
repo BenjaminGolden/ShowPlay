@@ -13,3 +13,7 @@
 .details__name {
     text-align: center;
 }
+
+.details__url--link {
+    color: #23383f;
+}

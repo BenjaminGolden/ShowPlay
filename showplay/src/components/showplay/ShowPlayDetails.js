@@ -32,7 +32,8 @@ export const EventDetail = () => {
             <div className="details__category"><b>Category: </b>{activity?.category?.name}</div>
             <div className="details__description"><b>description: </b>{activity.description}</div>
             <div className="details__date"><b>date: </b>{activity.date}</div>
-            <div className="details__url"><b>url: </b>{activity.url}</div>
+            <div className="details__url"><b>url: </b> <a className=
+            "details__url--link" href={activity.url}>{activity.url}</a></div>
             <div className="details__rating"><b>rating: </b>{"★".repeat(activity.rating)} </div>
             <div className="details__button">
             <button type="button" disabled={isLoading} onClick={handleDelete}>Delete</button>
