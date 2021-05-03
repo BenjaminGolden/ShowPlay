@@ -1,0 +1,12 @@
+.section__content {
+    margin: 1rem;
+    display: flex;
+    flex-direction: column;
+    
+}
+
+.event__filter {
+    margin: 1em;
+    display: flex;
+    justify-content: space-between;
+}

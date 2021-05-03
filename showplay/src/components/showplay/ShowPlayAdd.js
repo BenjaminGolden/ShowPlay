@@ -73,12 +73,24 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
         evt.preventDefault()
         setIsLoading(true)
 
-        const stateId = evt.stateId
-        const categoryId = evt.categoryId
-        const city = evt.city
+        const stateId = activity.stateId
+        const categoryId = activity.categoryId
+        const city = activity.city
 
-        if (stateId === 0 || categoryId === 0 || city === "") {
+        if (stateId === 0 || categoryId === 0 || city === '') {
             window.alert("please select a state, city, and a category")
+            setActivity({
+                userId: currentUser,
+                stateId: 0,
+                city: '',
+                categoryId: 0,
+                name: '',
+                description: '',
+                date: '',
+                url: '',
+                rating: 0
+            })
+            return history.push('/create')
         } if(evt.target.id === 'add'){        
             addEvent(activity)
                 .then(() => setActivity({
@@ -147,17 +159,17 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             </fieldset>
             <select value={activity.rating} name="rating" id="rating" onChange={handleRatingChange} className='form-control'>
                 <option value="">Select a Rating</option>
-                <option value="0">0</option>
-                <option value="1">1</option>
-                <option value="2">2</option>
-                <option value="3">3</option>
-                <option value="4">4</option>
-                <option value="5">5</option>
+                <option value="0">  </option>
+                <option value="1">★</option>
+                <option value="2">★★</option>
+                <option value="3">★★★</option>
+                <option value="4">★★★★</option>
+                <option value="5">★★★★★</option>
             </select>
             
 
-            <button className="button__save" id="return"onClick={handleSaveActivity} disabled={isLoading}>Save and return</button>
-            <button className="button__save" id="add"onClick={handleSaveActivity} disabled={isLoading}>Save and add another</button>
+            <button className="button__save" id="return"onClick={handleSaveActivity} >Save and return</button>
+            <button className="button__save" id="add"onClick={handleSaveActivity} >Save and add another</button>
 
         </form>
     )

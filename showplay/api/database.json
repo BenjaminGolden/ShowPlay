@@ -19,6 +19,11 @@
       "email": "b@b.com",
       "name": "Bryan Nilsen",
       "id": 4
+    },
+    {
+      "email": "brenda@b.com",
+      "name": "Brenda Long",
+      "id": 5
     }
   ],
   "events": [
@@ -55,7 +60,7 @@
       "description": "almost bought a guitar, great music store.",
       "date": "2021-04-16",
       "url": "www.chicagomusicexchange.com",
-      "rating": 4,
+      "rating": 2,
       "id": 4
     },
     {

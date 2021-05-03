@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getEventById, deleteEvent } from '../modules/EventManager'
 import { useParams, useHistory } from 'react-router-dom'
+import './ShowPlayDetails.css'
 
 
 export const EventDetail = () => {
@@ -33,10 +34,10 @@ export const EventDetail = () => {
             <div className="details__date"><b>date: </b>{activity.date}</div>
             <div className="details__url"><b>url: </b>{activity.url}</div>
             <div className="details__rating"><b>rating: </b>{"★".repeat(activity.rating)} </div>
-    
+            <div className="details__button">
             <button type="button" disabled={isLoading} onClick={handleDelete}>Delete</button>
             <button type="button"onClick={() => history.push(`/events/${activity.id}/edit`)}>Edit</button>
-            
+            </div>
         </section>
     )
 
