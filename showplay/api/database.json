@@ -60,7 +60,7 @@
     },
     {
       "userId": 1,
-      "name": "tacos",
+      "name": "Tacos and Burritos",
       "stateId": 5,
       "city": "San Diego",
       "categoryId": 1,
@@ -168,14 +168,14 @@
     },
     {
       "userId": 2,
-      "stateId": 1,
-      "city": "Birmingham",
+      "stateId": 9,
+      "city": "Miami",
       "categoryId": 2,
-      "name": "space shuttle rest stop",
-      "description": "cool rest stop",
-      "date": "2021-04-11",
-      "url": "test",
-      "rating": 2,
+      "name": "paddle boarding",
+      "description": "went paddle boarding in the wind. nearly got blown away",
+      "date": "2021-05-02",
+      "url": "www.saveme.com",
+      "rating": 3,
       "id": 14
     }
   ],
