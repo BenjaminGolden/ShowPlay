@@ -14,21 +14,14 @@
       "email": "k@k.com",
       "name": "Kaia Golden",
       "id": 3
+    },
+    {
+      "email": "b@b.com",
+      "name": "Bryan Nilsen",
+      "id": 4
     }
   ],
   "events": [
-    {
-      "userId": 1,
-      "name": "Helicopter out to a glacier",
-      "stateId": 2,
-      "city": "Fairbanks",
-      "categoryId": 1,
-      "description": "took a helicopter to a glacier",
-      "date": "2021-04-01",
-      "url": "test",
-      "rating": "1",
-      "id": 1
-    },
     {
       "userId": 1,
       "name": "Skiing at Breckenridge",
@@ -38,7 +31,7 @@
       "description": "Rode peaks 6-10 and rode 40,000 vertical feet ",
       "date": "2021-04-15",
       "url": "www.breckenridge.com",
-      "rating": "4",
+      "rating": 5,
       "id": 2
     },
     {
@@ -50,7 +43,7 @@
       "description": "did a tasting and bought several bottles of wine. Got drunk!",
       "date": "2019-12-20",
       "url": "www.sinskywines.com",
-      "rating": "5",
+      "rating": 3,
       "id": 3
     },
     {
@@ -62,43 +55,43 @@
       "description": "almost bought a guitar, great music store.",
       "date": "2021-04-16",
       "url": "www.chicagomusicexchange.com",
-      "rating": "3",
+      "rating": 4,
       "id": 4
     },
     {
       "userId": 1,
-      "name": "tacos",
+      "name": "Tacos and Burritos",
       "stateId": 5,
       "city": "San Diego",
       "categoryId": 1,
       "description": "taco flavor kisses",
       "date": "2021-04-22",
       "url": "www.taco.com",
-      "rating": "5",
+      "rating": 4,
       "id": 5
     },
     {
       "userId": 1,
+      "name": "Billy Bob's",
       "stateId": 43,
       "city": "Fort Worth",
       "categoryId": 1,
-      "name": "Billy Bob's",
       "description": "music venue",
       "date": "2021-04-30",
       "url": "test",
-      "rating": "2",
+      "rating": 3,
       "id": 6
     },
     {
       "userId": 3,
-      "name": "Skiing at Arapahoe basin",
+      "name": "Snowboarding at Arapahoe basin",
       "stateId": 6,
       "city": "Summit County",
       "categoryId": 2,
-      "description": "today we went skiing at A basin and rode 20,000 vertical feet and rode the front and back side of the mountain.",
-      "date": "2021-05-14",
+      "description": "today we went snowboarding at A basin and rode 20,000 vertical feet and rode the front and back side of the mountain.",
+      "date": "2021-05-15",
       "url": "www.abasin.com",
-      "rating": "4",
+      "rating": 5,
       "id": 7
     },
     {
@@ -110,32 +103,80 @@
       "description": "we spent the day riding trails at uncle Rodney's house",
       "date": "2021-04-17",
       "url": "n/a",
-      "rating": "5",
+      "rating": 4,
       "id": 8
     },
     {
       "userId": 3,
+      "name": "shoe shopping",
       "stateId": 42,
       "city": "Nashville",
       "categoryId": 3,
-      "name": "shoe shopping",
       "description": "new shoe day",
       "date": "2021-04-29",
       "url": "www.tinyfeet.com",
-      "rating": "3",
+      "rating": 2,
       "id": 9
     },
     {
       "userId": 3,
+      "name": "Bar Taco",
       "stateId": 5,
       "city": "L.A.",
       "categoryId": 1,
-      "name": "Bar Taco",
       "description": "tacos!!",
       "date": "2021-04-14",
       "url": "www.tacos.com",
-      "rating": "3",
+      "rating": 4,
       "id": 10
+    },
+    {
+      "userId": 2,
+      "name": "Skiing at Vail",
+      "stateId": 6,
+      "city": "Vail",
+      "categoryId": 2,
+      "description": "rode the back bowls all day",
+      "date": "2021-02-18",
+      "url": "www.vailresorts.com",
+      "rating": 4,
+      "id": 11
+    },
+    {
+      "userId": 2,
+      "name": "Vail Pub",
+      "stateId": 6,
+      "city": "Keystone",
+      "categoryId": 1,
+      "description": "drinks with dad",
+      "date": "2021-04-27",
+      "url": "www.ollies.com",
+      "rating": 4,
+      "id": 12
+    },
+    {
+      "userId": 2,
+      "stateId": 6,
+      "city": "Denver",
+      "categoryId": 3,
+      "name": "REI",
+      "description": "new backpack",
+      "date": "2021-04-05",
+      "url": "www.rei.com",
+      "rating": 3,
+      "id": 13
+    },
+    {
+      "userId": 2,
+      "stateId": 9,
+      "city": "Miami",
+      "categoryId": 2,
+      "name": "paddle boarding",
+      "description": "went paddle boarding in the wind. nearly got blown away",
+      "date": "2021-05-02",
+      "url": "www.saveme.com",
+      "rating": 3,
+      "id": 14
     }
   ],
   "categories": [

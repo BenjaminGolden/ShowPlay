@@ -3,7 +3,7 @@ import { useHistory } from 'react-router-dom';
 import { addEvent } from '../modules/EventManager';
 import { getAllStates } from '../modules/LocationManager'
 import { getAllCategories } from '../modules/CategoryManager'
-import { getAllEvents} from '../modules/EventManager'
+
 
 import './ShowPlayAdd.css'
 
@@ -19,7 +19,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
         description: '',
         date: '',
         url: '',
-        rating: ''
+        rating: 0
     })
     const [isLoading, setIsLoading] = useState(false);
     const [category, setCategory] = useState([])
@@ -33,6 +33,16 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             selectedVal = parseInt(selectedVal)
         }
         newActivity[event.target.id] = selectedVal
+        setActivity(newActivity)
+    }
+
+    const handleRatingChange = (event) => {
+        const newActivity = { ...activity }
+        let selectedVal = event.target.value
+        if (event.target.id.includes('Id')) {
+            selectedVal = parseInt(selectedVal)
+        }
+        newActivity[event.target.id] = parseInt(selectedVal)
         setActivity(newActivity)
     }
 
@@ -50,23 +60,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
         })
     }
 
-    const [rating, setRating] = useState(0)
 
-    // const getActivitiesForCurrentUser = () => {
-    //     return getActivitiesByUserId(currentUser)
-    //     .then(eventsFromAPI => {
-    //         setActivity(eventsFromAPI)
-    //     })
-    // }
-
-    const handleRatingFilter = (evt) => {
-        const rating = parseInt(evt.target.value)
-        setRating(rating)
-    }
-
-    // useEffect(() => {
-    //     getActivitiesForCurrentUser();        
-    // }, []);
 
     useEffect(() => {
         getCategories();
@@ -96,7 +90,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
                     description: '',
                     date: '',
                     url: '',
-                    rating: ''
+                    rating: 0
                 }))
                 
         } else {
@@ -151,7 +145,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
                     <input type="text" id="url" onChange={handleInputChange} required autoFocus className="form__control" placeholder="URL" value={activity.url}/>
                 </div>
             </fieldset>
-            <select value={activity.rating} name="rating" id="rating" onChange={handleInputChange} className='form-control'>
+            <select value={activity.rating} name="rating" id="rating" onChange={handleRatingChange} className='form-control'>
                 <option value="">Select a Rating</option>
                 <option value="0">0</option>
                 <option value="1">1</option>
@@ -162,8 +156,8 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             </select>
             
 
-            <button className="button__save" id="return"onClick={handleSaveActivity}>Save and return</button>
-            <button className="button__save" id="add"onClick={handleSaveActivity}>Save and add another</button>
+            <button className="button__save" id="return"onClick={handleSaveActivity} disabled={isLoading}>Save and return</button>
+            <button className="button__save" id="add"onClick={handleSaveActivity} disabled={isLoading}>Save and add another</button>
 
         </form>
     )

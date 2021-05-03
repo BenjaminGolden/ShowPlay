@@ -8,28 +8,33 @@ export const NavBar = () => {
     const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
     const [user, setUser] = useState({})
 
-    const getCurrentUser = () => {
-        return getLoggedInUser(currentUser)
+    const getCurrentUser = (id) => {
+        return getLoggedInUser(id)
         .then(userFromAPI => {
             setUser(userFromAPI)
         })
     }
 
     useEffect(() => {
-        getCurrentUser();
-    }, [])
+        getCurrentUser(currentUser);
+    }, [currentUser])
+
+    // const handleLogout = () => {
+    //    const logout = sessionStorage.clear()
+    //    setUser(logout)
+    // }
 
     return (
     <nav className="navbar">
             <ul className="nav__upper">
                 <li ><em>ShowPlay</em></li>
-                <li className="logout">
-                    <Link className="nav-link" to='/logout'>Logout</Link>
-                </li>
+                {/* <li className="logout">
+                    <Link className="nav-link" to='/login'>Logout</Link>
+                </li> */}
             </ul> 
            <ul className="nav">
                 <li className="nav-item">
-                    <Link className="nav-link" to='/'>My List</Link>
+                    <Link className="nav-link" to='/' >My List</Link>
                 </li>
                 <li className="nav-item">
                    <em>Welcome, </em>{user[0]?.name}

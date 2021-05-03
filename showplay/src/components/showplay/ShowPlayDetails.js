@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { getEventById, deleteEvent } from '../modules/EventManager'
 import { useParams, useHistory } from 'react-router-dom'
-import StarRateIcon from '@material-ui/icons/StarRate';
+
 
 export const EventDetail = () => {
     const [activity, setActivity] = useState({})
