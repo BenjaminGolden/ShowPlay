@@ -1,12 +1,13 @@
 .section__content {
-    margin: 1rem;
+    background-color: #efe8d8;
     display: flex;
     flex-direction: column;
     
 }
 
 .event__filter {
-    margin: 1em;
+    background-color: #efe8d8;
     display: flex;
     justify-content: space-between;
+    padding: 0 1rem;
 }

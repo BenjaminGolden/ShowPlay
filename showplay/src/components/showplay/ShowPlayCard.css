@@ -2,28 +2,27 @@
     background-color: #c8bcab;
     border-radius: 10px;
     color: #23383f;
+    margin: 1em;
 }
 
-.currentUser__card--title{
-    display: flex;
-    flex-direction: column;
-    margin: 1rem;
-    
-}
+
 
 .currentUser__card--location {
     text-align: center;
 }
 .currentUser__card--rating {
     display: flex;
-
-    justify-content: flex-end;
+    justify-content: space-between;
+    font-size: 1.5em;
+    margin: .5em;
 }
 .currentUser__card--details {
     text-align: center;
+    display: flex;
+    justify-content: space-around;
     
 }
 
-.details{
+.details__button{
     font-size: 1.25em;;
 }

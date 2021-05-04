@@ -5,7 +5,6 @@ import { getAllStates } from '../modules/LocationManager'
 import { getAllCategories } from '../modules/CategoryManager'
 import './ShowPlayAdd.css'
 
-
 export const NewEvent = () => {
 const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
 
@@ -111,7 +110,10 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
     }
 
     return (
-        <form className="eventForm">
+        <>
+        <form >
+            <div className="add">
+            <section className="eventForm">
             <h2 className="event__title">Create a New Event</h2>
             <div className="state__select">
                          {/* date */}
@@ -164,20 +166,24 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
                 </div>
             </fieldset>
                         {/* rating */}
-            <fieldset>Select a Rating:   <select value={activity.rating} name="rating" id="rating" onChange={handleRatingChange} className='form-control'>
-                <option value="0">  </option>
+            <fieldset>  <select value={activity.rating} name="rating" id="rating" onChange={handleRatingChange} className='form-control'>
+                <option value="0">Select a Rating:  </option>
                 <option value="1">★</option>
                 <option value="2">★★</option>
                 <option value="3">★★★</option>
                 <option value="4">★★★★</option>
                 <option value="5">★★★★★</option>
-            </select>
+            </select>  
             </fieldset>
+                        {/* save button */}
             <div className="save__buttons">
             <button className="button__save" id="return"onClick={handleSaveActivity} >Save and return</button>
             <button className="button__save" id="add"onClick={handleSaveActivity} >Save and add another</button>
             </div>
+        </section>
+        </div>
         </form>
+        </>
     )
 
 }

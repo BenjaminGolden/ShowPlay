@@ -1,6 +1,14 @@
+.add {
+    background-color: #efe8d8;
+    padding-bottom: 12em;
+    padding-top: 2em; 
+    
+}
 .eventForm {
-    background-color: #c8bcab;
+    background-color:  #c8bcab;
+    padding: 1em;
     border-radius: 10px;
+    
 }
 .state__select {
     margin: 1rem;
