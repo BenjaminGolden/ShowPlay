@@ -6,7 +6,7 @@ export const getAllEvents = () => {
 }
 
 export const getActivitiesByUserId = (userId) => {
-    return fetch(`${remoteURL}/events?userId=${userId}&_expand=category&_expand=state`)
+    return fetch(`${remoteURL}/events?userId=${userId}&_expand=category&_expand=state&_sort=stateId,rating&_order=asc,desc`)
     .then(result => result.json())
 }
 
