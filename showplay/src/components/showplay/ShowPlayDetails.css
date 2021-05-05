@@ -1,7 +1,14 @@
+.details {
+    background-color: #efe8d8;
+    padding-bottom: 25em;
+    padding-top: 2em;
+}
 .details__card {
     display: flex;
     flex-direction: column;
-    background-color: #cbcec5;
+    background-color: #c8bcab;
+    border-radius: 10px;
+   
     
 }
 
@@ -12,4 +19,8 @@
 
 .details__name {
     text-align: center;
+}
+
+.details__url--link {
+    color: #23383f;
 }

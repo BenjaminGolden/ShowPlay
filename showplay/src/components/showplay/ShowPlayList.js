@@ -51,16 +51,16 @@ export const MainList = () => {
         }
     }
 
-    // sort data
-
-    // const [data, setData] = useState([])
-    // const [sortType, setSortType] = useState('city')
-
-    // useEffect(() => {
-    //     const sortArray = city => {
-    //         const 
-    //     }
-    // })
+    const currentLocation = (activities.city, activities?.state?.name) 
+    const createHeader = () => {
+        const eventLocation = activities.filter(a => {
+            if(a.city && a.state.name === currentLocation){
+                console.log(eventLocation)
+                return eventLocation
+            }
+        })
+        console.log(createHeader())
+    }
 
     
 
@@ -89,6 +89,9 @@ export const MainList = () => {
 
         </div>
         </section>
+        <div>
+            
+        </div>
         <div className="section__content">
             { filterId === 0
             ? search.map(activity => <MainCard key={activity.id} activity={activity} />)

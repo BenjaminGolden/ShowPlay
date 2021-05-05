@@ -26,17 +26,20 @@ export const EventDetail = () => {
     };
 
     return(
-        <section className="details__card">
-            <h3 className="details__name">{activity.name}</h3>
+        <section className="details">
+            <div className="details__card">
+            <div className="details__rating"> <h3 className="details__name">{activity.name}</h3>
+            <b>rating: </b>{"★".repeat(activity.rating)} </div>
             <div className="details__location"><b>Location: </b>{activity.city}, {activity?.state?.name}</div>
             <div className="details__category"><b>Category: </b>{activity?.category?.name}</div>
             <div className="details__description"><b>description: </b>{activity.description}</div>
             <div className="details__date"><b>date: </b>{activity.date}</div>
-            <div className="details__url"><b>url: </b>{activity.url}</div>
-            <div className="details__rating"><b>rating: </b>{"★".repeat(activity.rating)} </div>
+            <div className="details__url"><b>url: </b> <a className=
+            "details__url--link" href={activity.url}>{activity.url}</a></div>
             <div className="details__button">
             <button type="button" disabled={isLoading} onClick={handleDelete}>Delete</button>
             <button type="button"onClick={() => history.push(`/events/${activity.id}/edit`)}>Edit</button>
+            </div>
             </div>
         </section>
     )

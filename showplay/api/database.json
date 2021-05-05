@@ -60,7 +60,7 @@
       "description": "almost bought a guitar, great music store.",
       "date": "2021-04-16",
       "url": "www.chicagomusicexchange.com",
-      "rating": 2,
+      "rating": 4,
       "id": 4
     },
     {
@@ -182,6 +182,30 @@
       "url": "www.saveme.com",
       "rating": 3,
       "id": 14
+    },
+    {
+      "userId": 1,
+      "name": "thin crust pizza",
+      "stateId": 13,
+      "city": "Chicago",
+      "categoryId": 1,
+      "description": "thin pizza??",
+      "date": "2021-05-14",
+      "url": "test",
+      "rating": 3,
+      "id": 15
+    },
+    {
+      "userId": 1,
+      "stateId": 13,
+      "city": "Chicago",
+      "categoryId": 2,
+      "name": "Cubs game",
+      "description": "baseball",
+      "date": "2021-05-13",
+      "url": "",
+      "rating": 5,
+      "id": 16
     }
   ],
   "categories": [
@@ -217,7 +241,7 @@
     },
     {
       "id": 5,
-      "name": "california"
+      "name": "California"
     },
     {
       "id": 6,
