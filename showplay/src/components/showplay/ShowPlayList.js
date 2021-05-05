@@ -22,19 +22,19 @@ export const MainList = () => {
 
     }
    
-    const groupByLocation = () => {
-        const cityGroups = activities.reduce(function (r, a) {
-            r[`${a.city}, ${a.state.name}`] = r[`${a.city}, ${a.state.name}`] || [];
-            r[`${a.city}, ${a.state.name}`].push(a);
-            return r;
-        }, Object.create(null));
+    // const groupByLocation = () => {
+    //     const cityGroups = activities.reduce(function (r, a) {
+    //         r[`${a.city}, ${a.state.name}`] = r[`${a.city}, ${a.state.name}`] || [];
+    //         r[`${a.city}, ${a.state.name}`].push(a);
+    //         return r;
+    //     }, Object.create(null));
 
-    return cityGroups
-    }
+    // return cityGroups
+    // }
 
-    useEffect(() => {
-        groupByLocation();
-    },[activities])
+    // useEffect(() => {
+    //     groupByLocation();
+    // },[activities])
 
     const getCategories = () => {
         return getAllCategories()
@@ -89,7 +89,7 @@ export const MainList = () => {
 
         </div>
         </section>
-        <div className="section__content">
+        {/* <div className="section__content">
             {Object.entries(groupByLocation()).map(([key, value])=> (
                 <div key={key}>
                     <h2>{key}</h2>
@@ -99,14 +99,14 @@ export const MainList = () => {
                         }
                 </div>
             ))}
-        </div>
-        {/* <div className="section__content">
+        </div> */}
+        <div className="section__content">
             { filterId === 0
             ? search.map(activity => <MainCard key={activity.id} activity={activity} />)
             : search.filter(activity => activity.categoryId === filterId).map(activity => <MainCard key={activity.id} activity={activity} />)
             }
 
-        </div> */}
+        </div>
         </>
     )
 }

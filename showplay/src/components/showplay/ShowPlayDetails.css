@@ -1,8 +1,4 @@
-.details {
-    background-color: #efe8d8;
-    padding-bottom: 25em;
-    padding-top: 2em;
-}
+
 .details__card {
     display: flex;
     flex-direction: column;

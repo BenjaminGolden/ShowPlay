@@ -27,7 +27,7 @@ export const MainCard = ({activity}) => {
         <section className="main__list">
             <div className="currentUser__card">
                 <div>
-                {/* <h3 className="currentUser__card--location"> {activity.city}, {activity.state.name} </h3> */}
+                <h3 className="currentUser__card--location"> {activity.city}, {activity.state.name} </h3>
                 </div>
                 <div className="currentUser__card--title" className="currentUser__card--rating">{activity.name} <span>{"★".repeat(activity.rating)}</span></div>
                     <div className="currentUser__card--details">
