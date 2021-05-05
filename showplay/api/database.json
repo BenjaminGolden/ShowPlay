@@ -206,6 +206,54 @@
       "url": "",
       "rating": 5,
       "id": 16
+    },
+    {
+      "userId": 1,
+      "stateId": 5,
+      "city": "Napa",
+      "categoryId": 1,
+      "name": "French Laundry",
+      "description": "dinner at the famous French Laundry. Incredible!",
+      "date": "2021-05-28",
+      "url": "www.frenchlaundry.com",
+      "rating": 5,
+      "id": 17
+    },
+    {
+      "userId": 1,
+      "stateId": 5,
+      "city": "San Diego",
+      "categoryId": 2,
+      "name": "San Diego Zoo",
+      "description": "took my family to the world famous zoo.",
+      "date": "2021-04-20",
+      "url": "www.sandiegozoo.com",
+      "rating": 5,
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "stateId": 43,
+      "city": "Austin ",
+      "categoryId": 2,
+      "name": "Collings Guitars",
+      "description": "took a tour of the Collings Guitar Factory and got to play some great instruments. ",
+      "date": "2021-04-01",
+      "url": "www.collings.com",
+      "rating": 4,
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "stateId": 44,
+      "city": "Moab",
+      "categoryId": 2,
+      "name": "Mountain Biking",
+      "description": "went mountain biking in the desert",
+      "date": "2021-06-19",
+      "url": "www.moab.com",
+      "rating": 5,
+      "id": 20
     }
   ],
   "categories": [
