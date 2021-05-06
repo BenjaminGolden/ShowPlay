@@ -1,27 +1,14 @@
-import React, {useEffect}  from 'react';
+
 import {Link, useHistory} from 'react-router-dom'
 import './ShowPlayCard.css'
 
 
-
+//MainCard is responsible for displaying the event card in the main view of the application
 export const MainCard = ({activity}) => {
-  
-
     const history = useHistory();
-
-        // if (activity.city && activity.state.name === currentLocation){
-        //     console.log(currentLocation)
-        //     return currentLocation;
-        
-
-    // useEffect(() => {
-    //     // createHeader()
-    // })
-
+              
     return(
         <>
-
-
         <section className="main__list">
             <div className="currentUser__card">
                 <div>

@@ -28,8 +28,7 @@ export const EventDetail = () => {
     return(
         <section className="details">
             <div className="details__card">
-            <div className="details__rating"> <h3 className="details__name">{activity.name}</h3>
-            <b>rating: </b>{"★".repeat(activity.rating)} </div>
+            <div className="details__rating"> <h3 className="details__name">{activity.name} - {"★".repeat(activity.rating)}</h3></div>
             <div className="details__location"><b>Location: </b>{activity.city}, {activity?.state?.name}</div>
             <div className="details__category"><b>Category: </b>{activity?.category?.name}</div>
             <div className="details__description"><b>description: </b>{activity.description}</div>
