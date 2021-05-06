@@ -23,7 +23,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
     const [category, setCategory] = useState([])
     const [state, setState] = useState([])
 
-
+    //handles input change in each of the input boxes except for ratings and sets state for activities
     const handleInputChange = (event) => {
         const newActivity = { ...activity }
         let selectedVal = event.target.value
@@ -34,6 +34,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
         setActivity(newActivity)
     }
 
+    //handles the rating change and sets state for Activities
     const handleRatingChange = (event) => {
         const newActivity = { ...activity }
         let selectedVal = event.target.value
@@ -59,7 +60,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
     }
 
 
-
+    //populates the category and state dropdown selection
     useEffect(() => {
         getCategories();
         getStates();
