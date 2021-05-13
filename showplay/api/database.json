@@ -41,18 +41,6 @@
     },
     {
       "userId": 1,
-      "name": "Robert Sinsky Winery",
-      "stateId": 5,
-      "city": "Napa",
-      "categoryId": 1,
-      "description": "did a tasting and bought several bottles of wine. Got drunk!",
-      "date": "2019-12-20",
-      "url": "www.robertsinskey.com/",
-      "rating": 3,
-      "id": 3
-    },
-    {
-      "userId": 1,
       "name": "Chicago Music Exchange",
       "stateId": 13,
       "city": "Chicago",
@@ -77,7 +65,7 @@
     },
     {
       "userId": 1,
-      "name": "Billy Bob's",
+      "name": "Billy Bob's Honky Tonk",
       "stateId": 43,
       "city": "Fort Worth",
       "categoryId": 1,
@@ -210,18 +198,6 @@
     {
       "userId": 1,
       "stateId": 5,
-      "city": "Napa",
-      "categoryId": 1,
-      "name": "French Laundry",
-      "description": "dinner at the famous French Laundry. Incredible!",
-      "date": "2021-05-28",
-      "url": "www.frenchlaundry.com",
-      "rating": 5,
-      "id": 17
-    },
-    {
-      "userId": 1,
-      "stateId": 5,
       "city": "San Diego",
       "categoryId": 2,
       "name": "San Diego Zoo",
@@ -254,6 +230,54 @@
       "url": "www.moab.com",
       "rating": 5,
       "id": 20
+    },
+    {
+      "userId": 1,
+      "stateId": 28,
+      "city": "Las Vegas",
+      "categoryId": 2,
+      "name": "TPC Las Vegas",
+      "description": "played the TPC Las Vegas golf course. shot 79.",
+      "date": "2020-03-11",
+      "url": "www.tpcvegas.com",
+      "rating": 5,
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "stateId": 32,
+      "city": "Farmingdale",
+      "categoryId": 2,
+      "name": "Bethpage Black Golf Course",
+      "description": "played the tips at Bethpage black. moved up one set of tees after two holes. It's no joke! ",
+      "date": "2021-05-27",
+      "url": "https://www.bethpagegolfcourse.com/contact/",
+      "rating": 5,
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "stateId": 2,
+      "city": "Anchorage",
+      "categoryId": 2,
+      "name": "Helicopter out to a glacier",
+      "description": "Took a helicopter to a glacier and explored for an hour!",
+      "date": "2021-04-10",
+      "url": "www.alaskahelicoptertours.com",
+      "rating": 5,
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "stateId": 2,
+      "city": "Anchorage",
+      "categoryId": 2,
+      "name": "Bear watching",
+      "description": "went to look at brown bears, but we didn't see any",
+      "date": "2021-04-23",
+      "url": "N/A",
+      "rating": 3,
+      "id": 24
     }
   ],
   "categories": [

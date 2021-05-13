@@ -31,17 +31,23 @@ export const NavBar = () => {
                 {/* <li className="logout">
                     <Link className="nav-link" to='/login'>Logout</Link>
                 </li> */}
+                <li className="nav-item">
+                {user[0]?.name}
+                </li>
             </ul> 
            <ul className="nav">
                 <li className="nav-item">
                     <Link className="nav-link" to='/' >My List</Link>
                 </li>
-                <li className="nav-item">
-                   <em>Welcome, </em>{user[0]?.name}
-                </li>
+    
                 <li className="nav-item">
                     <Link className="nav-link" to='/create'>New Event</Link>
                 </li>
+                {/* <li>
+                    <Link to='/tour'>tour schedule 
+
+                    </Link>
+                </li> */}
            </ul>
     </nav>
     )

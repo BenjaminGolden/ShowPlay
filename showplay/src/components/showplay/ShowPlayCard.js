@@ -26,13 +26,13 @@ export const MainCard = ({activity}) => {
         <>
         <section className="main__list">
             <div className="currentUser__card">
-                <div>
-                {/* <h3 className="currentUser__card--location"> {activity.city}, {activity.state.name} </h3> */}
-                </div>
+                {/* <div>
+                <h3 className="currentUser__card--location"> {activity.city}, {activity.state.name} </h3>
+                </div> */}
                 <div className="currentUser__card--title" className="currentUser__card--rating">{activity.name} <span>{"★".repeat(activity.rating)}</span></div>
                     <div className="currentUser__card--details">
                         <Link  className="details-link" to={`/details/${activity.id}`}>
-                        <button type="button" className="details__button"onClick={() => history.push(`/details/${activity.id}`)}>details</button> 
+                        <button type="button" className="details__button"onClick={() => history.push(`/details/${activity.id}`)}>Details</button> 
                         </Link>
                     </div>
             </div>

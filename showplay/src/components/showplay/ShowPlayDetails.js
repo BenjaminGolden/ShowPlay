@@ -2,6 +2,8 @@ import React, { useState, useEffect } from 'react';
 import { getEventById, deleteEvent } from '../modules/EventManager'
 import { useParams, useHistory } from 'react-router-dom'
 import './ShowPlayDetails.css'
+import DeleteIcon from '@material-ui/icons/Delete';
+import EditIcon from '@material-ui/icons/Edit';
 
 
 export const EventDetail = () => {
@@ -38,8 +40,8 @@ export const EventDetail = () => {
                 <div className="details__date"><b>Date: </b>{activity.date}</div>
                 <div className="details__url"><b>URL: </b> <a className="details__url--link" href={url}>{activity.url}</a></div>
                 <div className="details__button">
-                <button type="button" disabled={isLoading} onClick={handleDelete}>Delete</button>
-                <button type="button"onClick={() => history.push(`/events/${activity.id}/edit`)}>Edit</button>
+                <button type="button" disabled={isLoading} onClick={handleDelete}><DeleteIcon /> </button>
+                <button type="button"onClick={() => history.push(`/events/${activity.id}/edit`)}>       <EditIcon /> </button>
                 </div>
             </div>
         </section>

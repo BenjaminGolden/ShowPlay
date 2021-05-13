@@ -9,6 +9,7 @@
 
 .currentUser__card--location {
     text-align: center;
+    font-size: 1.3em;
 }
 .currentUser__card--rating {
     display: flex;
