@@ -25,7 +25,9 @@ export const NavBar = () => {
     // }
 
     return (
-    <nav className="navbar">
+    <>
+        <nav className="navbar">
+        
             <ul className="nav__upper">
                 <li ><em>ShowPlay</em></li>
                 {/* <li className="logout">
@@ -35,7 +37,7 @@ export const NavBar = () => {
                 {user[0]?.name}
                 </li>
             </ul> 
-           <ul className="nav">
+            <ul className="nav">
                 <li className="nav-item">
                     <Link className="nav-link" to='/' >My List</Link>
                 </li>
@@ -48,7 +50,8 @@ export const NavBar = () => {
 
                     </Link>
                 </li> */}
-           </ul>
-    </nav>
+            </ul>
+        </nav>
+    </>
     )
 }

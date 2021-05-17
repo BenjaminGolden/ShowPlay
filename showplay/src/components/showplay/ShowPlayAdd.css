@@ -1,6 +1,9 @@
 .add {
     background-color: #efe8d8;
-    
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+     */
 }
 .eventForm {
     background-color:  #c8bcab;
@@ -12,6 +15,7 @@
 .state__select {
     margin: 1rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .save__buttons {

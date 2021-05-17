@@ -233,10 +233,10 @@
     },
     {
       "userId": 1,
+      "name": "TPC Las Vegas Golf Course",
       "stateId": 28,
       "city": "Las Vegas",
       "categoryId": 2,
-      "name": "TPC Las Vegas",
       "description": "played the TPC Las Vegas golf course. shot 79.",
       "date": "2020-03-11",
       "url": "www.tpcvegas.com",

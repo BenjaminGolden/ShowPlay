@@ -123,7 +123,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
                 </div>
                             {/* city */}
                 <div className="event__cards">  
-                <input value={activity.city} type='text' className="search" required onChange={handleInputChange} id="city" placeholder="City name"/>
+                <input value={activity.city} type='text' className="search" required onChange={handleInputChange} id="city" placeholder="City name"  />
                 </div>
                         {/* state */}
                 <div >
@@ -155,7 +155,7 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="description"></label>
-                    <textarea type="text" id="description" onChange={handleInputChange} required autoFocus className="form__control" placeholder="description" value={activity.description} rows="4" cols="75"></textarea>
+                    <textarea type="text" id="description" onChange={handleInputChange} required autoFocus className="form__control" placeholder="description" value={activity.description} rows="4" cols="36"></textarea>
                 </div>
             </fieldset>
                         {/* url */}

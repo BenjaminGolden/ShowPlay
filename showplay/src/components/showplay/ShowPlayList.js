@@ -91,16 +91,16 @@ export const MainList = () => {
         </section>
         <div className="section__content">
             {Object.entries(groupByLocation()).map(([key, value])=> {
-                console.log(key, value)
+                // console.log(key, value)
                 let userActivities = value
-                console.log("before filter", userActivities)
+                // console.log("before filter", userActivities)
                 if (search !== ""){
-                    userActivities = value.filter(activity => activity.name.toLowerCase().includes(search.toLowerCase()))
+                    userActivities = value.filter(activity => activity.name.toLowerCase().includes(search.toLowerCase()) || activity.city.toLowerCase().includes(search.toLowerCase()) || activity.state.name.toLowerCase().includes(search.toLowerCase()))
                 }
                    if (filterId !== 0){
                        userActivities = value.filter(activity => activity.categoryId === filterId)
                    }
-                   console.log("after filter", userActivities)
+                //    console.log("after filter", userActivities)
                    if (userActivities.length > 0) {
                     return (
                     <div key={key}>
