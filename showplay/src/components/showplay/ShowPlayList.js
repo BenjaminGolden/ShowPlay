@@ -10,7 +10,7 @@ export const MainList = () => {
     const [activities, setActivities] = useState([])
     const [categories, setCategories] = useState([])
     const [filterId, setFilterId] = useState(0)
-    const [search, setSearch] = useState([])
+    const [search, setSearch] = useState("")
     const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
 
         //gets activites associated with the logged in user and sets state for activities and search
@@ -18,7 +18,7 @@ export const MainList = () => {
         return getActivitiesByUserId(id)
         .then(eventsFromAPI => {
             setActivities(eventsFromAPI)
-            setSearch(eventsFromAPI)
+            // setSearch(eventsFromAPI)
         })
 
     }
@@ -40,16 +40,16 @@ export const MainList = () => {
         evt.preventDefault()
         let searchInput = evt.target.value
         
-        if (searchInput.length > 0) {
-            let searchMatch = activities.filter(activity => {
-                if (activity.name.toLowerCase().includes(searchInput.toLowerCase()) || activity.city.toLowerCase().includes(searchInput.toLowerCase()) || activity.state.name.toLowerCase().includes(searchInput.toLowerCase())) {
-                    return true
-                }
-            })
-            setSearch(searchMatch)
-        } else {
-            setSearch(activities)
-        }
+        // if (searchInput.length > 0) {
+        //     let searchMatch = activities.filter(activity => {
+        //         if (activity.name.toLowerCase().includes(searchInput.toLowerCase()) || activity.city.toLowerCase().includes(searchInput.toLowerCase()) || activity.state.name.toLowerCase().includes(searchInput.toLowerCase())) {
+        //             return true
+        //         }
+        //     })
+        //     setSearch(searchMatch)
+        // } else {
+            setSearch(searchInput)
+        // }
     }
 
     
@@ -69,7 +69,7 @@ export const MainList = () => {
         </div>
         <div>
             <select value={categories.name} name="category" className='form-control' id="category" onChange={handleActivityFilter}>
-                <option value="0">Filter by Category</option> 
+                <option value="0">All Events</option> 
                 {categories.map(c => (
                     <option key={c.id} value={c.id}>{c.name}</option>
                 ))}</select>
@@ -77,11 +77,30 @@ export const MainList = () => {
         </div>
         </section>
         <div className="section__content">
-            { filterId === 0
-            ? search.map(activity => <MainCard key={activity.id} activity={activity} />)
-            : search.filter(activity => activity.categoryId === filterId).map(activity => <MainCard key={activity.id} activity={activity} />)
-            }
-
+            {Object.entries(groupByLocation()).map(([key, value])=> {
+                // console.log(key, value)
+                let userActivities = value
+                // console.log("before filter", userActivities)
+                if (search !== ""){
+                    userActivities = value.filter(activity => activity.name.toLowerCase().includes(search.toLowerCase()) || activity.city.toLowerCase().includes(search.toLowerCase()) || activity.state.name.toLowerCase().includes(search.toLowerCase()))
+                }
+                   if (filterId !== 0){
+                       userActivities = value.filter(activity => activity.categoryId === filterId)
+                   }
+                //    console.log("after filter", userActivities)
+                   if (userActivities.length > 0) {
+                    return (
+                    <div key={key}>
+                        <h2>{key}</h2>
+                        {userActivities.map(activity => <MainCard key={activity.id} activity={activity} />)}
+                    </div>
+                    )
+                   } 
+                    
+                }
+                 
+             
+            )}
         </div>
         </>
     )

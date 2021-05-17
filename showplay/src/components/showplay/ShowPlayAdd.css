@@ -1,18 +1,22 @@
 .add {
-    background-color: #efe8d8;
-    padding-bottom: 12em;
-    padding-top: 2em; 
-    
+    /* background-color: #efe8d8; */
+    /* display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+     */
 }
 .eventForm {
-    background-color:  #c8bcab;
+    background-color:  #23383f;
+    opacity: .7;
     padding: 1em;
     border-radius: 10px;
+    margin: 1em;
     
 }
 .state__select {
     margin: 1rem;
     display: flex;
+    flex-wrap: wrap;
     justify-content: space-between;
 }
 .save__buttons {
@@ -23,4 +27,12 @@
 
 .event__title {
     text-align: center;
+}
+
+.button__save--return {
+    margin: .25rem;
+}
+
+.button__save--another {
+    margin: .25rem;
 }

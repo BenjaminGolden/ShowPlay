@@ -4,6 +4,7 @@ import {MainList} from './showplay/ShowPlayList'
 import {NewEvent} from './showplay/ShowPlayAdd'
 import {EventDetail} from './showplay/ShowPlayDetails'
 import { EventEditForm } from './showplay/ShowPlayEditForm'
+// import {TourItinerary} from './mastertour/MasterTour'
 
 export const ApplicationViews = () => {
     return (
@@ -24,6 +25,9 @@ export const ApplicationViews = () => {
             <EventEditForm />
         </Route>
 
+        {/* <Route exact path="/tour">
+            <TourItinerary />
+        </Route> */}
         
         </>
     )

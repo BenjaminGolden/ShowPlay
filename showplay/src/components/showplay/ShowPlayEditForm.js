@@ -99,50 +99,61 @@ export const EventEditForm = () => {
     return (
         <>
          <form className="eventForm">
-            <h2 className="event__title">New Event</h2>
-            <div>
-            <select value={activity.stateId} name="stateId" id="stateId" onChange={handleInputChange} className='form-control'>
-                <option value="0">Select a State</option>
-                {state.map(s => (
-                    <option key={s.id} value={s.id}>{s.name}</option>
-                ))}
-            </select>
+            <h2 className="event__title">{activity.name}</h2>
+            <div className="event__selector">
+                {/* City */}
+                <div className="event__cards">City:   
+                <input value={activity.city} type='text' className="city" required onChange={handleFieldChange} id="city" placeholder="City name"/>
+                </div>
+            {/* State */}
+                <div>State:  
+                <select value={activity.stateId} name="stateId" id="stateId" onChange={handleInputChange} className='state'>
+                    <option value="0">Select a State</option>
+                    {state.map(s => (
+                        <option key={s.id} value={s.id}>{s.name}</option>
+                    ))}
+                </select>
+                </div>
+                {/* Category */}
+                <div>Category: 
+                <select value={activity.categoryId} name="categoryId" id="categoryId" onChange={handleInputChange} className='category'>
+                    <option vlaue="0">Select a Category</option>
+                    {category.map(c => (
+                        <option key={c.id} value={c.id}>{c.name}</option>
+                    ))}
+                </select>
+                </div>
             </div>
-            <div className="event__cards">  
-            <input value={activity.city} type='text' className="search" required onChange={handleFieldChange} id="city" placeholder="City name"/>
-            </div>
-            <div>
-            <select value={activity.categoryId} name="categoryId" id="categoryId" onChange={handleInputChange} className='form-control'>
-                <option vlaue="0">Select a Category</option>
-                {category.map(c => (
-                    <option key={c.id} value={c.id}>{c.name}</option>
-                ))}
-            </select>
-            </div>
+                {/* Name */}
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="name"></label>
-                    <input type="text" id="name" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="name of event" value={activity.name}/>
+                    <textarea type="text" id="name" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="name of event" value={activity.name} rows="1" cols="40"/>
                 </div>
             </fieldset>
+            {/* Description */}
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="description"></label>
                     <textarea type="text" id="description" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="description" value={activity.description} rows="4" cols="75"></textarea>
                 </div>
             </fieldset>
+            {/* date */}
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="date"></label>
                     <input type="date" id="date" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="date" value={activity.date}/>
                 </div>
             </fieldset>
+            {/* text */}
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="URL"></label>
-                    <input type="text" id="url" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="URL" value={activity.url}/>
+                    <textarea type="text" id="url" onChange={handleFieldChange} required autoFocus className="url" placeholder="URL" value={activity.url} rows="1" cols="40"/>
                 </div>
             </fieldset>
+            {/* Rating */}
+            <fieldset>
             <select value={activity.rating} name="rating" id="rating" onChange={handleInputChange} className='form-control'>
                 <option value="">Select a Rating</option>
                 <option value={0}>0</option>
@@ -152,11 +163,13 @@ export const EventEditForm = () => {
                 <option value={4}>4</option>
                 <option value={5}>5</option>
             </select>
+            {/* Submit */}
             <button
               type="button" disabled={isLoading}
               onClick={updateExistingEvent}
               className="button__edit--save"
             > Submit</button>
+            </fieldset>
         </form>
         </>
     )

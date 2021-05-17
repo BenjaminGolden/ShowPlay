@@ -35,21 +35,9 @@
       "categoryId": 2,
       "description": "Rode peaks 6-10 and rode 40,000 vertical feet ",
       "date": "2021-04-15",
-      "url": "www.breckenridge.com",
+      "url": "http://www.breckenridge.com",
       "rating": 5,
       "id": 2
-    },
-    {
-      "userId": 1,
-      "name": "Robert Sinsky Winery",
-      "stateId": 5,
-      "city": "Napa",
-      "categoryId": 1,
-      "description": "did a tasting and bought several bottles of wine. Got drunk!",
-      "date": "2019-12-20",
-      "url": "www.sinskywines.com",
-      "rating": 3,
-      "id": 3
     },
     {
       "userId": 1,
@@ -59,19 +47,27 @@
       "categoryId": 3,
       "description": "almost bought a guitar, great music store.",
       "date": "2021-04-16",
-      "url": "www.chicagomusicexchange.com",
+      "url": "http://www.chicagomusicexchange.com",
       "rating": 4,
       "id": 4
     },
     {
       "userId": 1,
+<<<<<<< HEAD
+      "name": "Tacos La Mezcla",
+      "stateId": 5,
+      "city": "San Diego",
+      "categoryId": 1,
+      "description": "best street tacos in san diego",
+=======
       "name": "Tacos La Mescla",
       "stateId": 5,
       "city": "San Diego",
       "categoryId": 1,
       "description": "best street tacos in San Diego",
+>>>>>>> main
       "date": "2021-04-22",
-      "url": "www.taco.com",
+      "url": "http://www.facebook.com/tacoslamezcla",
       "rating": 4,
       "id": 5
     },
@@ -83,7 +79,7 @@
       "categoryId": 1,
       "description": "music venue",
       "date": "2021-04-30",
-      "url": "test",
+      "url": "http://www.billybobstexas.com",
       "rating": 3,
       "id": 6
     },
@@ -185,18 +181,27 @@
     },
     {
       "userId": 1,
-      "name": "thin crust pizza",
+      "name": "Thin Crust Pizza",
       "stateId": 13,
       "city": "Chicago",
       "categoryId": 1,
       "description": "thin pizza??",
       "date": "2021-05-14",
-      "url": "test",
-      "rating": 3,
+      "url": "http://www.gosarpinos.com/",
+      "rating": 1,
       "id": 15
     },
     {
       "userId": 1,
+<<<<<<< HEAD
+      "name": "Cubs game",
+      "stateId": 13,
+      "city": "Chicago",
+      "categoryId": 2,
+      "description": "baseball",
+      "date": "2021-05-13",
+      "url": "http://www.mlb.com/cubs",
+=======
       "name": "Cubs baseball game",
       "stateId": 13,
       "city": "Chicago",
@@ -204,11 +209,179 @@
       "description": "Cubs vs. Giants",
       "date": "2021-05-13",
       "url": "www.chicagocubs.com",
+>>>>>>> main
       "rating": 5,
       "id": 16
     },
     {
       "userId": 1,
+<<<<<<< HEAD
+      "name": "San Diego Zoo",
+      "stateId": 5,
+      "city": "San Diego",
+      "categoryId": 2,
+      "description": "took my family to the world famous zoo.",
+      "date": "2021-04-20",
+      "url": "http://www.sandiegozoo.com",
+      "rating": 5,
+      "id": 18
+    },
+    {
+      "userId": 1,
+      "name": "Collings Guitars",
+      "stateId": 43,
+      "city": "Austin",
+      "categoryId": 2,
+      "description": "took a tour of the Collings Guitar Factory and got to play some great instruments. ",
+      "date": "2021-04-01",
+      "url": "http://www.collingsguitars.com",
+      "rating": 5,
+      "id": 19
+    },
+    {
+      "userId": 1,
+      "name": "Mountain Biking",
+      "stateId": 44,
+      "city": "Moab",
+      "categoryId": 2,
+      "description": "went mountain biking in the desert",
+      "date": "2021-06-19",
+      "url": "http://www.moab.com",
+      "rating": 5,
+      "id": 20
+    },
+    {
+      "userId": 1,
+      "name": "TPC Las Vegas Golf Course",
+      "stateId": 28,
+      "city": "Las Vegas",
+      "categoryId": 2,
+      "description": "played the TPC Las Vegas golf course. shot 79.",
+      "date": "2020-03-11",
+      "url": "http://www.tpcvegas.com",
+      "rating": 5,
+      "id": 21
+    },
+    {
+      "userId": 1,
+      "stateId": 32,
+      "city": "Farmingdale",
+      "categoryId": 2,
+      "name": "Bethpage Black Golf Course",
+      "description": "played the tips at Bethpage black. moved up one set of tees after two holes. It's no joke! ",
+      "date": "2021-05-27",
+      "url": "https://www.bethpagegolfcourse.com/contact/",
+      "rating": 5,
+      "id": 22
+    },
+    {
+      "userId": 1,
+      "name": "Helicopter to a glacier",
+      "stateId": 2,
+      "city": "Anchorage",
+      "categoryId": 2,
+      "description": "Took a helicopter to a glacier and explored for an hour!",
+      "date": "2021-04-10",
+      "url": "http://www.alaskahelicoptertours.com",
+      "rating": 5,
+      "id": 23
+    },
+    {
+      "userId": 1,
+      "stateId": 2,
+      "city": "Anchorage",
+      "categoryId": 2,
+      "name": "Bear watching",
+      "description": "went to look at brown bears, but we didn't see any",
+      "date": "2021-04-23",
+      "url": "N/A",
+      "rating": 3,
+      "id": 24
+    },
+    {
+      "userId": 1,
+      "name": "Granny's Tacos",
+      "stateId": 43,
+      "city": "Austin",
+      "categoryId": 1,
+      "description": "",
+      "date": "2021-05-13",
+      "url": "http://www.grannystacosatx.square.site/",
+      "rating": 4,
+      "id": 25
+    },
+    {
+      "userId": 1,
+      "name": "Fatty's",
+      "stateId": 6,
+      "city": "Breckenridge",
+      "categoryId": 1,
+      "description": "pizza and beer!",
+      "date": "2021-05-11",
+      "url": "http://www.fattyspizzeria.com/",
+      "rating": 3,
+      "id": 26
+    },
+    {
+      "userId": 1,
+      "name": "Torchy's Tacos",
+      "stateId": 43,
+      "city": "San Antonio",
+      "categoryId": 1,
+      "description": "Best Tacos in San Antonio",
+      "date": "2021-03-11",
+      "url": "http://www.torchystacos.com/",
+      "rating": 5,
+      "id": 27
+    },
+    {
+      "userId": 1,
+      "name": "Norman's Rare Guitars",
+      "stateId": 5,
+      "city": "Los Angeles",
+      "categoryId": 3,
+      "description": "another great guitar store",
+      "date": "2021-05-07",
+      "url": "http://www.normansrareguitars.com/",
+      "rating": 4,
+      "id": 28
+    },
+    {
+      "userId": 1,
+      "name": "Carter Vintage Guitars",
+      "stateId": 42,
+      "city": "Nashville",
+      "categoryId": 3,
+      "description": "Played some great old acoustic guitars.",
+      "date": "2021-05-01",
+      "url": "http://www.cartervintage.com/",
+      "rating": 5,
+      "id": 29
+    },
+    {
+      "userId": 1,
+      "name": "Japanese Tea Garden",
+      "stateId": 5,
+      "city": "San Francisco",
+      "categoryId": 2,
+      "description": "A nice park with pretty landscaping and nice green tea.",
+      "date": "2019-12-21",
+      "url": "http://www.japaneseteagardensf.com/",
+      "rating": 4,
+      "id": 30
+    },
+    {
+      "userId": 1,
+      "name": "Golden Guitars",
+      "stateId": 42,
+      "city": "Nashville",
+      "categoryId": 3,
+      "description": "Fine instruments and unique pieces of art!",
+      "date": "2021-06-01",
+      "url": "http://www.goldenguitars.com",
+      "rating": 5,
+      "id": 31
+=======
       "stateId": 5,
       "city": "San Diego",
       "categoryId": 2,
@@ -230,6 +403,7 @@
       "url": "www.frenchlaundry.com",
       "rating": 5,
       "id": 18
+>>>>>>> main
     }
   ],
   "categories": [

@@ -1,0 +1,24 @@
+.event__selector {
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    justify-content: space-evenly;
+    color: #FFFFFF;
+    
+}
+
+.button__edit--save {
+    margin-left: 1rem;
+}
+
+.city {
+    margin: 1rem;
+}
+
+.state {
+    margin: 1rem;
+}
+
+.category {
+    margin: 1rem;
+}

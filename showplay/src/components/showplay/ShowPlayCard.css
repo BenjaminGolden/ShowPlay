@@ -1,28 +1,46 @@
 .currentUser__card {
-    background-color: #c8bcab;
+    background-color:#23383f;
+    opacity: .65;
     border-radius: 10px;
-    color: #23383f;
+    color: #FFFFFF;
     margin: 1em;
+    padding: .5rem;
 }
-
+.currentUser__card:hover {
+    opacity: .9;
+}
 
 
 .currentUser__card--location {
     text-align: center;
+    font-size: 1.3em;
 }
 .currentUser__card--rating {
     display: flex;
     justify-content: space-between;
     font-size: 1.5em;
-    margin: .5em;
+    margin: 0 1.5em;
+    font-family: 'Libre Baskerville', serif;
+    
+}
+
+.currentUser__card--rating:hover {
+    opacity: 1;
 }
 .currentUser__card--details {
     text-align: center;
     display: flex;
-    justify-content: space-around;
+    justify-content: flex-end;
+    margin-right: 2.5em;
     
 }
 
 .details__button{
-    font-size: 1.25em;;
+    font-size: 1.25em;
+}
+
+h2 {
+    color: #FFFFFF;
+    text-align: left;
+   
 }
