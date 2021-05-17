@@ -53,19 +53,11 @@
     },
     {
       "userId": 1,
-<<<<<<< HEAD
       "name": "Tacos La Mezcla",
       "stateId": 5,
       "city": "San Diego",
       "categoryId": 1,
       "description": "best street tacos in san diego",
-=======
-      "name": "Tacos La Mescla",
-      "stateId": 5,
-      "city": "San Diego",
-      "categoryId": 1,
-      "description": "best street tacos in San Diego",
->>>>>>> main
       "date": "2021-04-22",
       "url": "http://www.facebook.com/tacoslamezcla",
       "rating": 4,
@@ -193,7 +185,6 @@
     },
     {
       "userId": 1,
-<<<<<<< HEAD
       "name": "Cubs game",
       "stateId": 13,
       "city": "Chicago",
@@ -201,21 +192,11 @@
       "description": "baseball",
       "date": "2021-05-13",
       "url": "http://www.mlb.com/cubs",
-=======
-      "name": "Cubs baseball game",
-      "stateId": 13,
-      "city": "Chicago",
-      "categoryId": 2,
-      "description": "Cubs vs. Giants",
-      "date": "2021-05-13",
-      "url": "www.chicagocubs.com",
->>>>>>> main
       "rating": 5,
       "id": 16
     },
     {
       "userId": 1,
-<<<<<<< HEAD
       "name": "San Diego Zoo",
       "stateId": 5,
       "city": "San Diego",
@@ -381,29 +362,6 @@
       "url": "http://www.goldenguitars.com",
       "rating": 5,
       "id": 31
-=======
-      "stateId": 5,
-      "city": "San Diego",
-      "categoryId": 2,
-      "name": "San Diego Zoo",
-      "description": "took my family to see one of the best zoo's in the country",
-      "date": "2021-02-10",
-      "url": "www.sandiegozoo.com",
-      "rating": 5,
-      "id": 17
-    },
-    {
-      "userId": 1,
-      "stateId": 5,
-      "city": "Napa",
-      "categoryId": 1,
-      "name": "French Laundry",
-      "description": "dined with at the famous French Laundry",
-      "date": "2021-05-22",
-      "url": "www.frenchlaundry.com",
-      "rating": 5,
-      "id": 18
->>>>>>> main
     }
   ],
   "categories": [
