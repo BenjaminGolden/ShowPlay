@@ -13,6 +13,7 @@ export const MainList = () => {
     const [search, setSearch] = useState("")
     const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
 
+        //gets activites associated with the logged in user and sets state for activities and search
     const getActivitiesForCurrentUser = (id) => {
         return getActivitiesByUserId(id)
         .then(eventsFromAPI => {
@@ -21,34 +22,20 @@ export const MainList = () => {
         })
 
     }
-   
-    const groupByLocation = () => {
-        const cityGroups = activities.reduce(function (r, a) {
-            r[`${a.city}, ${a.state.name}`] = r[`${a.city}, ${a.state.name}`] || [];
-            r[`${a.city}, ${a.state.name}`].push(a);
-            return r;
-        }, Object.create(null));
-
-    return cityGroups
-    }
-
-    useEffect(() => {
-        groupByLocation();
-    },[activities])
-
+    //populates the category dropdown
     const getCategories = () => {
         return getAllCategories()
         .then(categoriesFromAPI => {
             setCategories(categoriesFromAPI)
         })
     }    
-
+    //sets state for the filter ID
     const handleActivityFilter = (evt) => {
         const categoryId = parseInt(evt.target.value)
         setFilterId(categoryId)
 
     }
-
+    //search function handles the search functionality of the main list. User can search by city, state, or name of event. 
     const handleSearch =(evt) => {
         evt.preventDefault()
         let searchInput = evt.target.value
@@ -115,13 +102,6 @@ export const MainList = () => {
              
             )}
         </div>
-        {/* <div className="section__content">
-            { filterId === 0
-            ? search.map(activity => <MainCard key={activity.id} activity={activity} />)
-            : search.filter(activity => activity.categoryId === filterId).map(activity => <MainCard key={activity.id} activity={activity} />)
-            }
-
-        </div> */}
         </>
     )
 }
