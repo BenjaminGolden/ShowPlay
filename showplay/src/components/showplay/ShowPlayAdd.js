@@ -177,8 +177,8 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             </fieldset>
                         {/* save button */}
             <div className="save__buttons">
-            <button className="button__save" id="return"onClick={handleSaveActivity} >Save and return</button>
-            <button className="button__save" id="add"onClick={handleSaveActivity} >Save and add another</button>
+            <button className="button__save--return" id="return"onClick={handleSaveActivity} >Save and return</button>
+            <button className="button__save--another" id="add"onClick={handleSaveActivity} >Save and add another</button>
             </div>
         </section>
         </div>

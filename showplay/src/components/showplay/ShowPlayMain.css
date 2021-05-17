@@ -1,15 +1,15 @@
 .section__content {
-    background-color: #efe8d8;
+    /* background-color: #efe8d8; */
     display: flex;
     flex-direction: column;
     
 }
 
 .event__filter {
-    background-color: #efe8d8;
+    /* background-color: #efe8d8; */
     display: flex;
     justify-content: space-between;
-    padding: 1rem  1rem 0;
+    padding: 1rem  3rem 0;
 }
 
 h2 {

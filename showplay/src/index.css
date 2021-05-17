@@ -1,6 +1,12 @@
 body {
   margin: 0;
-  background-color: #efe8d8;
+  /* background-color: #efe8d8; */
+  background-image: url(../src/components/images/ShowPlay.jpg);
+  background-repeat: no-repeat;
+  background-position: center;
+  background-size: cover;
+  background-attachment: fixed;
+  /* -webkit-text-stroke: .15px black; */
 }
 
 

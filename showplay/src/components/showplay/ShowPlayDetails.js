@@ -27,8 +27,8 @@ export const EventDetail = () => {
         .then(() => history.push('/'))
     };
 
-    const url = `http://${activity.url}`
-    //TODO: url gets added to the end of the existing url instead of going to the external link
+    const url = `${activity.url}`
+    
     return(
         <section className="details">
             <div className="details__card">
@@ -40,8 +40,8 @@ export const EventDetail = () => {
                 <div className="details__date"><b>Date: </b>{activity.date}</div>
                 <div className="details__url"><b>URL: </b> <a className="details__url--link" href={url}>{activity.url}</a></div>
                 <div className="details__button">
-                <button type="button" disabled={isLoading} onClick={handleDelete}><DeleteIcon /> </button>
-                <button type="button"onClick={() => history.push(`/events/${activity.id}/edit`)}>       <EditIcon /> </button>
+                <button className="delete" type="button" disabled={isLoading} onClick={handleDelete}><DeleteIcon /> </button>
+                <button className="edit" type="button"onClick={() => history.push(`/events/${activity.id}/edit`)}><EditIcon /></button>
                 </div>
             </div>
         </section>
