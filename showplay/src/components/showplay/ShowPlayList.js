@@ -22,6 +22,16 @@ export const MainList = () => {
         })
 
     }
+        const groupByLocation = () => {
+            const cityGroups = activities.reduce(function (r, a) {
+                r[`${a.city}, ${a.state.name}`] = r[`${a.city}, ${a.state.name}`] || [];
+                r[`${a.city}, ${a.state.name}`].push(a);
+                return r;
+            }, Object.create(null));
+    
+        return cityGroups
+        }
+
     //populates the category dropdown
     const getCategories = () => {
         return getAllCategories()
