@@ -149,21 +149,21 @@ const currentUser = parseInt(sessionStorage.getItem("app_user_id"))
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="name"></label>
-                    <input type="text" id="name" onChange={handleInputChange} required autoFocus className="form__control" placeholder="name of event" value={activity.name}/>
+                    <textarea type="text" id="name" onChange={handleInputChange} required autoFocus className="form__control" placeholder="name of event" value={activity.name} rows="1" cols="40"/>
                 </div>
             </fieldset>
                         {/* description */}
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="description"></label>
-                    <textarea type="text" id="description" onChange={handleInputChange} required autoFocus className="form__control" placeholder="description" value={activity.description} rows="4" cols="36"></textarea>
+                    <textarea type="text" id="description" onChange={handleInputChange} required autoFocus className="form__control" placeholder="description" value={activity.description} rows="4" cols="40"></textarea>
                 </div>
             </fieldset>
                         {/* url */}
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="URL"></label>
-                    <input type="text" id="url" onChange={handleInputChange} required autoFocus className="form__control" placeholder="URL" value={activity.url}/>
+                    <textarea type="text" id="url" onChange={handleInputChange} required autoFocus className="form__control" placeholder="URL" value={activity.url} rows="1" cols="40"/>
                 </div>
             </fieldset>
                         {/* rating */}

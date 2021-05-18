@@ -362,6 +362,54 @@
       "url": "http://www.goldenguitars.com",
       "rating": 5,
       "id": 31
+    },
+    {
+      "userId": 1,
+      "stateId": 5,
+      "city": "Santa Cruz",
+      "categoryId": 3,
+      "name": "Santa Cruz Guitar Company",
+      "description": "Bought a beautiful 000 guitar",
+      "date": "2016-11-16",
+      "url": "https://santacruzguitar.com/",
+      "rating": 5,
+      "id": 32
+    },
+    {
+      "userId": 1,
+      "stateId": 43,
+      "city": "San Antonio",
+      "categoryId": 2,
+      "name": "River Walk",
+      "description": "went on a stroll by the river",
+      "date": "2021-05-17",
+      "url": "https://www.thesanantonioriverwalk.com/",
+      "rating": 3,
+      "id": 33
+    },
+    {
+      "userId": 1,
+      "stateId": 10,
+      "city": "Atlanta",
+      "categoryId": 3,
+      "name": "Righteous Guitars",
+      "description": "Huge guitar store with a lot of PRS and Gibson inventory",
+      "date": "2021-05-08",
+      "url": "https://righteousguitars.com/",
+      "rating": 5,
+      "id": 34
+    },
+    {
+      "userId": 1,
+      "stateId": 42,
+      "city": "Nashville",
+      "categoryId": 1,
+      "name": "Hot Chicken",
+      "description": "Hot!!!",
+      "date": "2021-05-17",
+      "url": "https://www.princeshotchicken.com/",
+      "rating": 4,
+      "id": 35
     }
   ],
   "categories": [

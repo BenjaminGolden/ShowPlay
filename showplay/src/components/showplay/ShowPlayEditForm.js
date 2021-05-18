@@ -135,7 +135,7 @@ export const EventEditForm = () => {
             <fieldset>
                 <div className="form__group">
                     <label htmlFor="description"></label>
-                    <textarea type="text" id="description" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="description" value={activity.description} rows="4" cols="75"></textarea>
+                    <textarea type="text" id="description" onChange={handleFieldChange} required autoFocus className="form__control" placeholder="description" value={activity.description} rows="6" cols="40"></textarea>
                 </div>
             </fieldset>
             {/* date */}
