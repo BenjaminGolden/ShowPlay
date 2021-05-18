@@ -1,5 +1,5 @@
 # ShowPlay
-ShowPlay is an application designed for touring musicians, athletes, and businessmen/women who frequently travel to the same cities for work. It allows the user to keep track of the unique places they visit in a specific location and save deatils related to the event for future reference.
+ShowPlay is an application designed for touring musicians, athletes, and businessmen/women who frequently travel to the same cities for work. It allows the user to keep track of the unique places they visit in a specific location and save details related to the event for future reference.
 
 ## Installation
 clone ```git@github.com:BenjaminGolden/ShowPlay.git```
