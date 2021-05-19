@@ -4,8 +4,6 @@ ShowPlay is an application designed for touring musicians, athletes, and busines
 ## Installation
 clone ```git@github.com:BenjaminGolden/ShowPlay.git```
 
-Run ```npx create-react-app```
-
 Run ```npm start``` from the root directory
 
 in a separate terminal window, launch ```json-server -p 8088 -w database.json```
